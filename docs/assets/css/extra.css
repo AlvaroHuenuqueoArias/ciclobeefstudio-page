@@ -1,1 +1,29 @@
-/* placeholder extra css */
+/* docs/assets/css/extra.css
+   Minimal styling base for CicloBeef Studio placeholders.
+*/
+
+/* Simple CSS reset for the docs content */
+html,body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color: #ffffff;
+  color: #111827;
+}
+
+/* Branding variables */
+:root{
+  --cb-primary: #0f172a; /* near-black navy */
+  --cb-accent: #1f92ff;  /* accent blue */
+}
+
+/* Page header styling hook (overrides/main.html should include a header element) */
+.ciclo-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0));
+}
+
+/* small utility */
+.container { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+
