@@ -1,0 +1,49 @@
+site_name: "CicloBeef Studio"
+site_description: "Premium art inspired by history, politics and society."
+site_author: "CicloBeef Studio"
+repo_url: "https://github.com/AlvaroHuenuqueoArias/ciclobeefstudio-page"
+edit_uri: "edit/main/docs/"
+
+docs_dir: docs
+site_dir: site
+
+nav:
+  - Home: index.md
+  - Project: project.md
+  - Team: team.md
+  - Integrations:
+      - Meta Graph: integrations/meta-graph.md
+  - Privacy: privacy.md
+
+theme:
+  name: material
+  language: en
+  palette:
+    scheme: default
+  features:
+    - navigation.sections
+    - navigation.instant
+    - toc.integrate
+
+plugins:
+  - search
+  - macros
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.betterem
+  - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/AlvaroHuenuqueoArias/ciclobeefstudio-page
+
+extra_css:
+  - assets/css/extra.css
+
+extra_javascript:
+  - assets/js/custom.js

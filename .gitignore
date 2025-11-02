@@ -1,0 +1,27 @@
+# Python / bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+.env
+
+# MkDocs build output
+site/
+
+# Local backups and editor files
+.untracked_backup/
+mkdocs.yml.bak
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# OS / misc
+*.log
+E0F

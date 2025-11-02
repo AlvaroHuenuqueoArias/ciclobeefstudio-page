@@ -1,0 +1,42 @@
+name: PR checks — MkDocs build and lint
+
+# Ejecuta en pull requests hacia develop o main
+on:
+  pull_request:
+    branches: [ develop, main ]
+
+jobs:
+  validate-mkdocs:
+    name: Validate MkDocs (install & build)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: MkDocs build (strict)
+        run: |
+          python -m mkdocs build --strict
+
+      - name: Basic check for broken links (optional)
+        if: ${{ always() }}
+        run: |
+          # opcional: instalar linkchecker u otras herramientas si las agregas a requirements
+          echo "PR checks completed"
