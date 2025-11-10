@@ -34,7 +34,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          # Use the repo secret - DO NOT put a literal token here
+          # Use either the auto-created GITHUB_TOKEN or a custom repo secret GH_PAGES_TOKEN
           github_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./site
           # optional:
