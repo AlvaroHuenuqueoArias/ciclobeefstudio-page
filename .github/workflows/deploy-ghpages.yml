@@ -1,9 +1,11 @@
-name: Deploy to GitHub Pages (from main)
+name: Deploy to GitHub Pages (manual via tag)
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Tag to deploy (e.g. v0.2.0)'
+        required: true
 
 permissions:
   contents: read
@@ -13,14 +15,17 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout code at tag
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.release_tag }}
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |
@@ -28,13 +33,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build site
-        run: |
-          python -m mkdocs build
+        run: mkdocs build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./site
-          # optional:
-          # publish_branch: gh-pages
