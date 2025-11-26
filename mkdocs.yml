@@ -14,6 +14,7 @@ nav:
   - Integrations:
       - Meta Graph: integrations/meta-graph.md
   - Privacy: privacy.md
+  - Style Guide: style-guide.md
 
 theme:
   name: material

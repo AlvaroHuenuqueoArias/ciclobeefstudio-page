@@ -1,29 +1,89 @@
-/* docs/assets/css/extra.css
-   Minimal styling base for CicloBeef Studio placeholders.
-*/
+/*=========================================================
+  CICLOBEEF STUDIO – Corporate Style Sheet (v0.3.0)
+=========================================================*/
 
-/* Simple CSS reset for the docs content */
-html,body {
+/* RESET GENERAL */
+html, body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background-color: #ffffff;
-  color: #111827;
+  font-family: "Inter", Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: #111111;
+  line-height: 1.6;
 }
 
-/* Branding variables */
-:root{
-  --cb-primary: #0f172a; /* near-black navy */
-  --cb-accent: #1f92ff;  /* accent blue */
+/* BRANDING COLORS */
+:root {
+  --cb-primary: #1A1A1A;      /* Negro profundo */
+  --cb-secondary: #BFA56D;    /* Bronze / Dorado */
+  --cb-accent: #8B0000;       /* Rojo oscuro */
+  --cb-bg-light: #F5F5F5;
+  --cb-gray: #777777;
 }
 
-/* Page header styling hook (overrides/main.html should include a header element) */
+/* TITULARES */
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--cb-primary);
+}
+
+/* LINKS */
+a {
+  color: var(--cb-secondary);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--cb-accent);
+}
+
+/* CTA BUTTON */
+.btn-primary {
+  background-color: var(--cb-secondary);
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  color: #FFF;
+  font-weight: 600;
+  display: inline-block;
+}
+.btn-primary:hover {
+  background-color: var(--cb-accent);
+}
+
+/* HEADER */
 .ciclo-header {
-  padding: 1rem 1.25rem;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0));
+  background-color: var(--cb-primary);
+  color: #FFF;
+  padding: 1.2rem 2rem;
+  border-bottom: 2px solid var(--cb-secondary);
 }
 
-/* small utility */
-.container { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+/* FOOTER */
+.ciclo-footer {
+  background-color: var(--cb-primary);
+  color: var(--cb-bg-light);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+/* LAYOUT */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+/* HERO SECTION */
+.hero {
+  padding: 5rem 2rem;
+  background-color: var(--cb-bg-light);
+  text-align: center;
+}
+
+/* IMAGES */
+img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
 
