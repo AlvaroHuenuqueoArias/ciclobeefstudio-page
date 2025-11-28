@@ -48,4 +48,5 @@ We commit to producing artworks that invite reflection, preserve memory and conn
 
 For collaborations, commissions or institutional inquiries:
 
-[Contact us](contact.md){ .btn-primary }
+<!-- [Contáctanos](contact.md) -->
+
