@@ -19,12 +19,17 @@ nav:
 theme:
   name: material
   language: en
+  logo: assets/images/CiclobeefStudio2.png
+  favicon: assets/images/CiclobeefStudio2.png
   palette:
-    scheme: default
+    scheme: slate         # Professional graphite background
+    primary: red          # Watermelon red
+    accent: amber         # Mustard yellow
   features:
     - navigation.sections
     - navigation.instant
     - toc.integrate
+    - content.code.copy
 
 plugins:
   - search

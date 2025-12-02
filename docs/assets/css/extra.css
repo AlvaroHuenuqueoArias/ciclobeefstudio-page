@@ -1,89 +1,58 @@
-/*=========================================================
-  CICLOBEEF STUDIO – Corporate Style Sheet (v0.3.0)
-=========================================================*/
+site_name: "CicloBeef Studio"
+site_description: "Premium art inspired by history, politics and society."
+site_author: "CicloBeef Studio"
+repo_url: "https://github.com/AlvaroHuenuqueoArias/ciclobeefstudio-page"
+edit_uri: "edit/main/docs/"
 
-/* RESET GENERAL */
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", Arial, sans-serif;
-  background-color: #FFFFFF;
-  color: #111111;
-  line-height: 1.6;
-}
+docs_dir: docs
+site_dir: site
 
-/* BRANDING COLORS */
-:root {
-  --cb-primary: #1A1A1A;      /* Negro profundo */
-  --cb-secondary: #BFA56D;    /* Bronze / Dorado */
-  --cb-accent: #8B0000;       /* Rojo oscuro */
-  --cb-bg-light: #F5F5F5;
-  --cb-gray: #777777;
-}
+nav:
+  - Home: index.md
+  - Project: project.md
+  - Team: team.md
+  - Integrations:
+      - Meta Graph: integrations/meta-graph.md
+  - Privacy: privacy.md
+  - Style Guide: style-guide.md
 
-/* TITULARES */
-h1, h2, h3 {
-  font-family: "Playfair Display", serif;
-  color: var(--cb-primary);
-}
+theme:
+  name: material
+  language: en
+  logo: assets/images/CiclobeefStudio2.png
+  favicon: assets/images/CiclobeefStudio2.png
+  palette:
+    scheme: slate         # Professional graphite background
+    primary: red          # Watermelon red
+    accent: amber         # Mustard yellow
+  features:
+    - navigation.sections
+    - navigation.instant
+    - toc.integrate
+    - content.code.copy
 
-/* LINKS */
-a {
-  color: var(--cb-secondary);
-  text-decoration: none;
-}
-a:hover {
-  color: var(--cb-accent);
-}
+plugins:
+  - search
+  - macros
 
-/* CTA BUTTON */
-.btn-primary {
-  background-color: var(--cb-secondary);
-  padding: 0.75rem 1.25rem;
-  border-radius: 4px;
-  color: #FFF;
-  font-weight: 600;
-  display: inline-block;
-}
-.btn-primary:hover {
-  background-color: var(--cb-accent);
-}
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.betterem
+  - pymdownx.tilde
 
-/* HEADER */
-.ciclo-header {
-  background-color: var(--cb-primary);
-  color: #FFF;
-  padding: 1.2rem 2rem;
-  border-bottom: 2px solid var(--cb-secondary);
-}
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/AlvaroHuenuqueoArias/ciclobeefstudio-page
 
-/* FOOTER */
-.ciclo-footer {
-  background-color: var(--cb-primary);
-  color: var(--cb-bg-light);
-  padding: 2rem;
-  text-align: center;
-  margin-top: 4rem;
-}
+extra_css:
+  - assets/css/extra.css
 
-/* LAYOUT */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 1.5rem;
-}
+extra_javascript:
+  - assets/js/custom.js
 
-/* HERO SECTION */
-.hero {
-  padding: 5rem 2rem;
-  background-color: var(--cb-bg-light);
-  text-align: center;
-}
-
-/* IMAGES */
-img {
-  max-width: 100%;
-  border-radius: 6px;
-}
 
 
