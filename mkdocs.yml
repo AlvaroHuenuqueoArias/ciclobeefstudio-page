@@ -22,9 +22,9 @@ theme:
   logo: assets/images/CiclobeefStudio2.png
   favicon: assets/images/CiclobeefStudio2.png
   palette:
-    scheme: slate         # Professional graphite background
-    primary: red          # Watermelon red
-    accent: amber         # Mustard yellow
+    scheme: default              # White background
+    primary: amber               # Mustard yellow top bar
+    accent: gray                 # Graphite details
   features:
     - navigation.sections
     - navigation.instant

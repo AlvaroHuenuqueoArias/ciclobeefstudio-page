@@ -1,58 +1,208 @@
-site_name: "CicloBeef Studio"
-site_description: "Premium art inspired by history, politics and society."
-site_author: "CicloBeef Studio"
-repo_url: "https://github.com/AlvaroHuenuqueoArias/ciclobeefstudio-page"
-edit_uri: "edit/main/docs/"
+/*=========================================================
+  CICLOBEEF STUDIO – Corporate Style Sheet (v0.4.0)
+  Branding: White base, Graphite text, Mustard header
+=========================================================*/
 
-docs_dir: docs
-site_dir: site
+/* RESET GLOBAL */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background-color: #FFFFFF;      /* White */
+  color: #1A1A1A;                 /* Graphite */
+  line-height: 1.6;
+}
 
-nav:
-  - Home: index.md
-  - Project: project.md
-  - Team: team.md
-  - Integrations:
-      - Meta Graph: integrations/meta-graph.md
-  - Privacy: privacy.md
-  - Style Guide: style-guide.md
+/* BRANDING VARIABLES */
+:root {
+  --cb-primary: #1A1A1A;          /* Graphite dark */
+  --cb-secondary: #FFC300;        /* Mustard yellow */
+  --cb-accent: #333333;           /* Darker graphite */
+  --cb-bg-light: #FFFFFF;         /* White */
+  --cb-gray: #777777;             /* Mid gray */
+}
 
-theme:
-  name: material
-  language: en
-  logo: assets/images/CiclobeefStudio2.png
-  favicon: assets/images/CiclobeefStudio2.png
-  palette:
-    scheme: slate         # Professional graphite background
-    primary: red          # Watermelon red
-    accent: amber         # Mustard yellow
-  features:
-    - navigation.sections
-    - navigation.instant
-    - toc.integrate
-    - content.code.copy
+/* TITLES */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif;
+  color: var(--cb-primary);
+  font-weight: 600;
+}
 
-plugins:
-  - search
-  - macros
+/* TEXT DEFAULT */
+p, li {
+  color: var(--cb-primary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
 
-markdown_extensions:
-  - admonition
-  - toc:
-      permalink: true
-  - pymdownx.superfences
-  - pymdownx.betterem
-  - pymdownx.tilde
+/* LINKS */
+a {
+  color: var(--cb-secondary);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--cb-primary);
+  text-decoration: underline;
+}
 
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/AlvaroHuenuqueoArias/ciclobeefstudio-page
+/* CODE BLOCKS */
+code, pre {
+  font-family: monospace;
+  background-color: #F7F7F7;
+  color: var(--cb-accent);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
 
-extra_css:
-  - assets/css/extra.css
+/* CTA BUTTON */
+.btn-primary {
+  background-color: var(--cb-secondary);
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  color: var(--cb-primary);
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color .2s ease-in-out;
+}
+.btn-primary:hover {
+  background-color: var(--cb-primary);
+  color: #FFFFFF;
+}
 
-extra_javascript:
-  - assets/js/custom.js
+/* HEADER OVERRIDE (MkDocs Material) */
+.md-header {
+  background-color: var(--cb-secondary) !important;  /* Mustard */
+  color: var(--cb-primary) !important;               /* Graphite */
+}
 
+/* HEADER TITLE, BUTTONS, LOGO TEXT */
+.md-header__title, 
+.md-header__button, 
+.md-logo {
+  color: var(--cb-primary) !important;
+}
 
+/* MENU ITEMS TOP RIGHT */
+.md-header__button .md-icon {
+  color: var(--cb-primary) !important;
+}
 
+/* LOGO SIZE OVERRIDE */
+/* Desktop logo size */
+.md-logo img {
+  height: 48px !important;
+  width: auto !important;
+  max-height: 48px !important;
+}
+
+/* Mobile logo size */
+@media (max-width: 900px) {
+  .md-logo img {
+    height: 36px !important;
+    max-height: 36px !important;
+  }
+}
+
+/* SIDEBAR NAVIGATION */
+.md-nav {
+  background-color: #FFFFFF;
+}
+
+.md-nav__link {
+  color: var(--cb-primary) !important;
+  font-weight: 500;
+}
+.md-nav__link:hover {
+  color: var(--cb-secondary) !important;
+}
+
+/* ACTIVE NAV ITEM */
+.md-nav__link--active {
+  color: var(--cb-secondary) !important;
+  font-weight: 700;
+}
+
+/* FOOTER */
+.md-footer {
+  background-color: #FFFFFF;
+  color: var(--cb-primary);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+  border-top: 1px solid #E0E0E0;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+/* HERO SECTION */
+.hero {
+  padding: 5rem 2rem;
+  background-color: var(--cb-bg-light);
+  text-align: center;
+}
+
+/* IMAGES */
+img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+/* TABLES */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+th {
+  background-color: var(--cb-secondary);
+  color: var(--cb-primary);
+  font-weight: 600;
+  padding: 0.75rem;
+}
+
+td {
+  color: var(--cb-primary);
+  padding: 0.75rem;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+/* BLOCKQUOTES */
+blockquote {
+  border-left: 4px solid var(--cb-secondary);
+  padding-left: 1rem;
+  color: var(--cb-primary);
+  font-style: italic;
+  background-color: #FAFAFA;
+}
+
+/* ADMONITIONS - ALERT BOXES */
+.admonition {
+  border-radius: 6px;
+  border-left: 6px solid var(--cb-secondary);
+  background-color: #FCFCFC;
+}
+
+/* SCROLLBARS (for modern browsers only) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--cb-secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background-color: #F0F0F0;
+}
+
+/* SPACING UTILITIES */
+.mt-2 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 2rem; }
+.pt-2 { padding-top: 2rem; }
+.pb-2 { padding-bottom: 2rem; }
