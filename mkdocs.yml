@@ -19,12 +19,17 @@ nav:
 theme:
   name: material
   language: en
+  logo: assets/images/CiclobeefStudio2.png
+  favicon: assets/images/CiclobeefStudio2.png
   palette:
-    scheme: default
+    scheme: default              # White background
+    primary: amber               # Mustard yellow top bar
+    accent: gray                 # Graphite details
   features:
     - navigation.sections
     - navigation.instant
     - toc.integrate
+    - content.code.copy
 
 plugins:
   - search
