@@ -14,13 +14,14 @@ nav:
   - Integrations:
       - Meta Graph: integrations/meta-graph.md
   - Privacy: privacy.md
+  - Terms: terms.md
   - Style Guide: style-guide.md
 
 theme:
   name: material
   language: en
-  logo: assets/images/CiclobeefStudio2.png
-  favicon: assets/images/CiclobeefStudio2.png
+  logo: assets/images/CicloBeefStudio.png
+  favicon: assets/images/CicloBeefStudio.png
   palette:
     scheme: default              # White background
     primary: amber               # Mustard yellow top bar
