@@ -19,6 +19,18 @@ The website is designed as a foundational entry point into the broader CicloBeef
 
 ---
 
+## Version 0.5.1
+
+This hotfix resolves a production issue where the site root briefly rendered
+documentation content before redirecting to the landing page.
+
+### Changes
+- Serve landing page directly at `/`
+- Remove redirect-based home behavior
+- Preserve documentation under a dedicated entry
+
+---
+
 ## 🔧 Project Goals
 
 * Provide a professional and scalable documentation platform
