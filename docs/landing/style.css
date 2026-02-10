@@ -25,11 +25,8 @@ html, body {
         linear-gradient(rgba(124, 107, 9, 0.158), rgba(0, 0, 0, 0.2)),
         url('../assets/images/Landingimg1.png') no-repeat;
 
-    /* ✅ MANTIENE ESCALA CORRECTA */
     background-size: cover;
 
-    /* 🔽 CAMBIO CLAVE:
-       "Aleja" visualmente la imagen moviéndola hacia arriba */
     background-position: center 20%;
 
     display: flex;
@@ -123,7 +120,6 @@ button:hover {
 }
 
 
-
 /* =========================
     SECTION 2
 ========================= */
@@ -172,9 +168,6 @@ button:hover {
     position: absolute;
 }
 
-
-/* degradado leve */
-
 .chat-bubble::after {
     content:"";
     position:absolute;
@@ -183,9 +176,6 @@ button:hover {
     background:linear-gradient(180deg,rgba(255,255,255,.15),rgba(0,0,0,.05));
     pointer-events:none;
 }
-
-
-/* posiciones laterales */
 
 .chat-bubble[data-side="left"] {
     left:0;
@@ -199,9 +189,6 @@ button:hover {
     opacity:1;
     transform: translateY(var(--drop)) translateX(0);
 }
-
-
-/* mensaje final */
 
 .chat-final {
     position: absolute;
@@ -244,7 +231,7 @@ button:hover {
 }
 
 .social-buttons {
-    margin-top: 2.8rem; /* 🔽 Baja los iconos en bloque */
+    margin-top: 2.8rem; 
 }
 
 .social-buttons a:hover {
@@ -270,7 +257,7 @@ footer a:hover {
 }
 
 /* =========================
-    CHAT MANTEL (RECTANGULAR)
+    CHAT TABLE (RECTANGULAR)
 ========================= */
 
 .chat-container {
