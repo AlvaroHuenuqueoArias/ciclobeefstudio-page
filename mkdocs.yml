@@ -8,19 +8,21 @@ docs_dir: docs
 site_dir: site
 
 nav:
-  - Home: index.md
+  # MODIFIED: Landing is now the root page (docs/index.html). Docs entry moved here:
+  - Documentation: docs-home.md
   - Project: project.md
   - Team: team.md
   - Integrations:
       - Meta Graph: integrations/meta-graph.md
   - Privacy: privacy.md
+  - Terms: terms.md
   - Style Guide: style-guide.md
 
 theme:
   name: material
   language: en
-  logo: assets/images/CiclobeefStudio2.png
-  favicon: assets/images/CiclobeefStudio2.png
+  logo: assets/images/CicloBeefStudio.png
+  favicon: assets/images/CicloBeefStudio.png
   palette:
     scheme: default              # White background
     primary: amber               # Mustard yellow top bar

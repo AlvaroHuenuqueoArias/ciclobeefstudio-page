@@ -17,18 +17,19 @@ if (legalToggle) {
     Conversational loop
 ========================= */
 
+/* MODIFIED: image paths updated after moving landing to site root */
 const bubbleImages = [
-    { src: "../assets/images/bubble-client-01.png", side: "right" },
-    { src: "../assets/images/bubble-cbs-02.png", side: "left" },
-    { src: "../assets/images/bubble-client-03.png", side: "right" },
-    { src: "../assets/images/bubble-cbs-04.png", side: "left" },
-    { src: "../assets/images/bubble-client-05.png", side: "right" },
-    { src: "../assets/images/bubble-cbs-06.png", side: "left" },
-    { src: "../assets/images/bubble-client-07.png", side: "right" },
-    { src: "../assets/images/bubble-cbs-08.png", side: "left" },
-    { src: "../assets/images/bubble-client-09.png", side: "right" },
-    { src: "../assets/images/bubble-cbs-10.png", side: "left" },
-    { src: "../assets/images/bubble-cbs-11.png", side: "left" }
+    { src: "assets/images/bubble-client-01.png", side: "right" },
+    { src: "assets/images/bubble-cbs-02.png", side: "left" },
+    { src: "assets/images/bubble-client-03.png", side: "right" },
+    { src: "assets/images/bubble-cbs-04.png", side: "left" },
+    { src: "assets/images/bubble-client-05.png", side: "right" },
+    { src: "assets/images/bubble-cbs-06.png", side: "left" },
+    { src: "assets/images/bubble-client-07.png", side: "right" },
+    { src: "assets/images/bubble-cbs-08.png", side: "left" },
+    { src: "assets/images/bubble-client-09.png", side: "right" },
+    { src: "assets/images/bubble-cbs-10.png", side: "left" },
+    { src: "assets/images/bubble-cbs-11.png", side: "left" }
 ];
 
 const chatBubble = document.getElementById("chatBubble");
@@ -130,6 +131,7 @@ const chatObserver = new IntersectionObserver((entries) => {
 if (stepsSection) {
     chatObserver.observe(stepsSection);
 }
+
 
 
 
