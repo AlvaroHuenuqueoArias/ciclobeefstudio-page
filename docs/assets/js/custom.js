@@ -18,7 +18,7 @@
     badge.style.fontSize = '13px';
     badge.innerText = 'CicloBeef Studio — Prototype';
     document.body.appendChild(badge);
-    setTimeout(() => badge.remove(), 7000); // desaparece luego de 7s
+    setTimeout(() => badge.remove(), 7000); 
   }
 
   // run on DOM ready

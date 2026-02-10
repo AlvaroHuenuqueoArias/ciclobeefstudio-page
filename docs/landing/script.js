@@ -40,7 +40,6 @@ const SHOW = 2400;
 const TRANS = 700;
 const FINAL = 2200;
 
-/* ===== control de timers ===== */
 let showTimeout = null;
 let transTimeout = null;
 let finalTimeout = null;
@@ -54,7 +53,6 @@ function showBubble() {
     chatBubble.src = item.src;
     chatBubble.dataset.side = item.side;
 
-    // caída progresiva vertical
     chatBubble.style.setProperty("--drop", `0px`);
 
     chatBubble.classList.add("active");
@@ -105,14 +103,12 @@ const chatObserver = new IntersectionObserver((entries) => {
 
         if (entry.isIntersecting && !chatStarted) {
 
-            /* ===== ENTRA A SECCIÓN 2 ===== */
             chatStarted = true;
             bubbleIndex = 0;
             showBubble();
 
         } else if (!entry.isIntersecting && chatStarted) {
 
-            /* ===== SALE DE SECCIÓN 2 (RESET LIMPIO) ===== */
             chatStarted = false;
 
             clearTimeout(showTimeout);
