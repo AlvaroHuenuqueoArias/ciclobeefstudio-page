@@ -23,7 +23,8 @@ html, body {
 
     background:
         linear-gradient(rgba(124, 107, 9, 0.158), rgba(0, 0, 0, 0.2)),
-        url('../assets/images/Landingimg1.png') no-repeat;
+        /* MODIFIED: path updated after moving landing to site root */
+        url('assets/images/Landingimg1.png') no-repeat;
 
     background-size: cover;
 
@@ -94,7 +95,6 @@ html, body {
     font-size: 3rem;
     color: #FFC300;
 
-    /* 🔽 BAJA EL TEXTO RESPECTO AL LOGO */
     margin-top: 12.8rem;
 }
 
@@ -128,7 +128,8 @@ button:hover {
     min-height: 100vh;
     background:
         linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25)),
-        url('../assets/images/Landingimg2.png') no-repeat center center;
+        /* MODIFIED: path updated after moving landing to site root */
+        url('assets/images/Landingimg2.png') no-repeat center center;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -313,5 +314,6 @@ footer a:hover {
     height: auto;
     display: block;
 }
+
 
 

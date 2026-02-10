@@ -8,7 +8,8 @@ docs_dir: docs
 site_dir: site
 
 nav:
-  - Home: index.md
+  # MODIFIED: Landing is now the root page (docs/index.html). Docs entry moved here:
+  - Documentation: docs-home.md
   - Project: project.md
   - Team: team.md
   - Integrations:
