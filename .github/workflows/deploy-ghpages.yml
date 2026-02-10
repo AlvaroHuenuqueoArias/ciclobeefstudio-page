@@ -4,13 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       release_tag:
-        description: 'Tag to deploy (e.g. v0.2.0)'
+        description: "Tag to deploy (e.g. v0.5.0)"
         required: true
+        type: string
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -20,12 +19,13 @@ jobs:
       - name: Checkout code at tag
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.release_tag }}
+          ref: ${{ inputs.release_tag }}
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
       - name: Install dependencies
         run: |
