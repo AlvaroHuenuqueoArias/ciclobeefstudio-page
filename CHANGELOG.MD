@@ -4,6 +4,29 @@ All notable changes to this project are documented in this file. The format foll
 
 ---
 
+## [v0.5.0] - 2026-02
+
+### Added
+- Fullscreen corporate landing page (`docs/landing/`)
+- Conversational UX flow simulating automated customer interaction
+- Optimized background assets for hero and conversation sections
+- Unified CicloBeef Studio branding assets for landing experience
+
+### Changed
+- Refactored landing styles for fullscreen behavior
+- Disabled legacy hero styles from previous versions
+- Improved visual hierarchy, spacing, and readability
+
+### Removed
+- Deprecated legacy logo assets
+- Obsolete background image versions
+
+### Notes
+This release marks the first major 2026 iteration and prepares the platform
+for Meta Graph API verification and future automation workflows.
+
+---
+
 ## [v0.4.0] - 2025-12-02
 
 ### Added

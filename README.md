@@ -8,13 +8,14 @@ The website is designed as a foundational entry point into the broader CicloBeef
 
 ## 📅 Project Timeline & Releases
 
-| Version | Date       | Description                                                                   |
-| ------- | ---------- | ----------------------------------------------------------------------------- |
-| v0.1.0  | 2025-11-02 | Initial release with structure, base theme, and working CI pipeline           |
-| v0.2.0  | 2025-11-20 | Migrated to tag-based deployment and improved workflow integration            |
-| v0.3.0  | 2025-11-28 | First major branding implementation with dark UI and structured pages         |
-| v0.3.1  | 2025-11-27 | Hotfix to remove broken links and disable AWS CI pending setup                |
-| v0.4.0  | Pending    | Final branding release with light UI, redesigned logo, and polished structure |
+| Version | Date       | Description                                                                 |
+| ------- | ---------- | --------------------------------------------------------------------------- |
+| v0.1.0  | 2025-11-02 | Initial release with structure, base theme, and working CI pipeline         |
+| v0.2.0  | 2025-11-20 | Migrated to tag-based deployment and improved workflow integration          |
+| v0.3.0  | 2025-11-28 | First major branding implementation with dark UI and structured pages       |
+| v0.3.1  | 2025-11-27 | Hotfix to remove broken links and disable AWS CI pending setup              |
+| v0.4.0  | 2025-12-02 | Final 2025 branding release and corporate UI consolidation                  |
+| v0.5.0  | 2026-02   | Fullscreen landing, conversational UX, and automation-ready layout           |
 
 ---
 
