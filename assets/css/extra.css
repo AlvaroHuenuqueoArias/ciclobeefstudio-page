@@ -8,18 +8,18 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Inter", Arial, sans-serif;
-  background-color: #FFFFFF;      /* White */
-  color: #1A1A1A;                 /* Graphite */
+  background-color: #FFFFFF;      
+  color: #1A1A1A;                 
   line-height: 1.6;
 }
 
 /* BRANDING VARIABLES */
 :root {
-  --cb-primary: #1A1A1A;          /* Graphite dark */
-  --cb-secondary: #FFC300;        /* Mustard yellow */
-  --cb-accent: #333333;           /* Darker graphite */
-  --cb-bg-light: #FFFFFF;         /* White */
-  --cb-gray: #777777;             /* Mid gray */
+  --cb-primary: #1A1A1A;          
+  --cb-secondary: #FFC300;       
+  --cb-accent: #333333;           
+  --cb-bg-light: #FFFFFF;         
+  --cb-gray: #777777;             
 }
 
 /* TITLES */
@@ -72,8 +72,8 @@ code, pre {
 
 /* HEADER OVERRIDE (MkDocs Material) */
 .md-header {
-  background-color: var(--cb-secondary) !important;  /* Mustard */
-  color: var(--cb-primary) !important;               /* Graphite */
+  background-color: var(--cb-secondary) !important;  
+  color: var(--cb-primary) !important;               
 }
 
 /* HEADER TITLE, BUTTONS, LOGO TEXT */
@@ -140,12 +140,14 @@ code, pre {
   padding: 1.5rem;
 }
 
-/* HERO SECTION */
+/* HERO SECTION (disabled for landing visual) */
+/*
 .hero {
   padding: 5rem 2rem;
   background-color: var(--cb-bg-light);
   text-align: center;
 }
+*/
 
 /* IMAGES */
 img {
