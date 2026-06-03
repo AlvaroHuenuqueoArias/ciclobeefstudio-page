@@ -472,3 +472,77 @@ After the Basic Landing reaches 100%, future work may continue with:
 - Combo 4: Landing + Leads + Basic ChatBot.
 
 Those future stages must be developed in separate branches and must not be mixed into the Basic Landing release.
+
+---
+
+## 13. Addendum — Pre-Implementation Frontend Diagnosis
+
+Date: 2026-06-03.
+
+Model:
+
+- DeepSeek V4 Pro.
+
+Branch:
+
+- feature/basic-landing-commercial-structure.
+
+### 13.1 Diagnosis Summary
+
+The pre-implementation diagnosis confirmed that the current landing page has a strong visual foundation but still behaves as a two-section brand introduction.
+
+The next implementation must focus on commercial structure and frontend stability before adding future features.
+
+### 13.2 Accepted Scope for This Branch
+
+This branch should implement:
+
+- Hero commercial structure.
+- What We Create section.
+- Featured Collections section.
+- How It Works section.
+- Available Formats section.
+- Why CicloBeef Studio section.
+- Start Your Request section.
+- Basic CSS structure for commercial sections.
+- Bubble visual stabilization.
+- Bubble image preloading.
+- Basic responsive section layout.
+
+### 13.3 Technical Issues to Fix in This Branch
+
+The following issues should be handled during this implementation:
+
+1. Replace broad bubble animation transition with specific opacity and transform transitions.
+2. Add stable aspect ratio or explicit dimensions for bubble images.
+3. Preload all bubble images before the animation cycle.
+4. Avoid visible position snapping when bubble side changes.
+5. Reduce fragile layout behavior caused by hardcoded hero spacing.
+6. Add reusable CSS section and card structures.
+7. Preserve the current chat bubble concept without turning it into a chatbot.
+
+### 13.4 Issues Deferred to Later Branches
+
+The following items are intentionally deferred:
+
+- Full SEO metadata.
+- Favicon.
+- Open Graph social preview replacement.
+- Canva product mockups.
+- Terms payment wording.
+- Social media URL verification.
+- Analytics.
+- Full accessibility pass.
+- Final release QA.
+
+### 13.5 Completion Target
+
+Before this branch:
+
+- 48%.
+
+Expected after this branch:
+
+- 63%.
+
+This branch must not claim 71% completion because the full copy/value proposition stage remains separate.

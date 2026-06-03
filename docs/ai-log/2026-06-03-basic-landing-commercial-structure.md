@@ -82,31 +82,60 @@ This phase uses the same professional AI workflow used in Always Beautiful:
 
 Status:
 
-- Pending.
+- Completed.
 
-Prompt used:
+Model:
 
-- Pending.
+- DeepSeek V4 Pro.
 
-Main areas to diagnose:
+Diagnosis type:
 
-- HTML section structure.
-- CSS dimensions.
-- Responsive layout.
-- Bubble/cloud animation instability.
-- Background image behavior.
-- Current CTA structure.
-- Commercial section readiness.
-- Files to modify.
-- Scope boundaries.
+- Pre-implementation frontend diagnosis.
+
+Main findings:
+
+1. The current landing page is visually strong but still behaves as a two-section brand introduction, not as a complete Basic Commercial Landing Page.
+2. The page must evolve toward a full commercial structure with Hero, What We Create, Featured Collections, How It Works, Available Formats, Why CicloBeef Studio, Start Your Request, and Footer.
+3. The chat bubble animation has a visible instability caused mainly by broad CSS transitions, side switching, image swapping, and missing reserved image dimensions.
+4. The current CSS uses fragile dimensions in several areas, especially hardcoded hero spacing, viewport-dependent backgrounds, absolute positioning, and insufficient responsive rules.
+5. The social preview image exists but is empty and must be replaced later through the Canva assets stage.
+6. The current branch must not implement backend, forms, chatbot logic, payments, APIs, Google Sheets, Google Apps Script, ThePrintSpace API, Meta Graph API, CRM, or dashboard functionality.
+
+Technical risks detected:
+
+- transition: all 0.9s ease on .chat-bubble.
+- Side switching between left and right during the bubble cycle.
+- Missing explicit width, height, or aspect-ratio for chat bubble images.
+- Missing preload strategy for bubble images.
+- Fragile hero margin-top value.
+- Insufficient responsive media queries.
+- Empty docs/assets/social/preview.png file.
+
+Accepted implementation direction:
+
+- Add the missing commercial HTML sections.
+- Preserve the current hero, logo, legal toggle, footer, and bubble concept.
+- Move the current bubble visual sequence into the How It Works section.
+- Move social links into the Start Your Request section.
+- Update the hero messaging only at a structural level.
+- Fix the bubble instability with transition narrowing, aspect-ratio, and image preloading.
+- Keep the branch inside the Basic Landing scope.
+
+Deferred work:
+
+- Full SEO metadata.
+- Favicon.
+- Real Canva product mockups.
+- Social preview image replacement.
+- Terms payment wording.
+- Social URL verification.
+- Analytics.
+- Full accessibility pass.
+- Final QA release.
 
 ## 9. Codex CLI Implementation
 
 Status:
-
-- Pending.
-
-Prompt used:
 
 - Pending.
 
@@ -121,6 +150,17 @@ Possible files to inspect:
 - docs/business/ciclobeef-basic-landing-value-proposition.md
 - docs/technical/ciclobeef-basic-landing-audit-scope.md
 - docs/audits/2026-06-03-ciclobeef-basic-landing/implementation-backlog.md
+
+Expected implementation:
+
+1. Add six missing commercial sections.
+2. Update hero copy and CTA anchor.
+3. Move chat bubble container into How It Works.
+4. Move social buttons into Start Your Request.
+5. Add reusable section, grid, card, format, trust, and CTA styles.
+6. Fix chat bubble transition behavior.
+7. Add bubble image preloading in JavaScript.
+8. Keep the project static and within Basic Landing scope.
 
 ## 10. Post-Implementation Review
 
@@ -140,6 +180,7 @@ Review focus:
 - Were dimension inconsistencies reduced?
 - Did the landing remain static?
 - Were no backend, chatbot, payment, API, or automation features added?
+- Did the branch correctly target 48% to 63% completion?
 
 ## 11. Commit Decision
 
@@ -149,7 +190,7 @@ Status:
 
 Suggested commit message if implementation is approved:
 
-feat: add commercial structure for basic landing page
+feat: add commercial landing structure with 6 new sections
 
 ## 12. PR Decision
 
@@ -163,4 +204,4 @@ Expected PR target:
 
 Expected PR title:
 
-feat: add commercial structure for basic landing page
+feat: add commercial landing structure with 6 new sections
