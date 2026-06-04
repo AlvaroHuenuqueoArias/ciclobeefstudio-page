@@ -205,3 +205,69 @@ Expected PR target:
 Expected PR title:
 
 feat: add commercial landing structure with 6 new sections
+
+---
+
+## 13. Codex CLI Implementation Result
+
+Status:
+
+- Completed.
+
+Implementation model/tool:
+
+- Codex CLI.
+
+Files modified by Codex CLI:
+
+- docs/index.html
+- docs/style.css
+- docs/script.js
+
+Important note:
+
+- CHANGELOG.MD appears modified in the working tree, but Codex CLI reported that it did not modify it. This file must be reviewed and excluded from the current implementation commit unless intentionally updated later.
+
+Implemented changes:
+
+1. Updated hero title to "Premium Wall Art That Speaks".
+2. Updated hero subtitle to communicate premium cultural wall art.
+3. Updated the main CTA to "See Our Collections".
+4. Added the commercial section structure:
+   - What We Create.
+   - Featured Collections.
+   - How It Works.
+   - Available Formats.
+   - Why CicloBeef Studio.
+   - Start Your Request.
+5. Moved the chat bubble visual sequence into the How It Works section.
+6. Moved social links into the Start Your Request section.
+7. Added visible email contact through mailto.
+8. Added reusable CSS section, grid, card, format, trust, and email CTA styles.
+9. Added initial responsive grid behavior.
+10. Fixed part of the bubble instability by replacing broad transition behavior with opacity and transform transitions.
+11. Added aspect-ratio for bubble images.
+12. Added bubble image preloading in JavaScript.
+13. Updated the scroll target from the old steps section to What We Create.
+
+Current implementation assessment:
+
+- The branch appears to cover the intended Stage 2 commercial structure.
+- The landing should now be reviewed visually before commit.
+- A post-implementation DeepSeek V4 Pro audit is required before approving the implementation.
+
+Potential visual issues to review:
+
+- Section height and visible next-section slivers during scroll.
+- Mobile responsive layout.
+- Hero spacing and background image dependency.
+- Card spacing and section rhythm.
+- Bubble positioning stability.
+- Email CTA layout on small screens.
+- Whether current background images should be removed or converted into gallery/mockup assets.
+
+Next required action:
+
+- Run DeepSeek V4 Pro post-implementation audit.
+- Update this AI log with the post-audit result.
+- Decide whether to request a Codex refinement before commit.

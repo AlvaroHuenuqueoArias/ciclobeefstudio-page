@@ -546,3 +546,68 @@ Expected after this branch:
 - 63%.
 
 This branch must not claim 71% completion because the full copy/value proposition stage remains separate.
+
+---
+
+## 14. Addendum — Post-Codex Implementation Review Pending
+
+Date: 2026-06-04.
+
+Branch:
+
+- feature/basic-landing-commercial-structure.
+
+Codex CLI implemented the first commercial structure for the Basic Landing.
+
+### 14.1 Implemented in Current Branch
+
+- Hero commercial copy.
+- What We Create section.
+- Featured Collections section.
+- How It Works section.
+- Available Formats section.
+- Why CicloBeef Studio section.
+- Start Your Request section.
+- Visible email CTA.
+- Social buttons moved into the request section.
+- Bubble visual sequence moved into How It Works.
+- Bubble image preloading.
+- Bubble transition stabilization.
+- Initial responsive section/grid styles.
+
+### 14.2 Required Before Commit
+
+The implementation must be audited visually and technically before commit.
+
+Required checks:
+
+1. Desktop visual rhythm.
+2. Mobile responsiveness.
+3. Section height and scroll behavior.
+4. Bubble animation stability.
+5. No forbidden scope additions.
+6. No forms.
+7. No backend.
+8. No payment integration.
+9. No provider API integration.
+10. No chatbot logic.
+11. No unwanted CHANGELOG.MD inclusion.
+
+### 14.3 Known Visual Concerns
+
+The current implementation may still require refinement in later branches or before commit:
+
+- Some section transitions may expose small next-section strips during scrolling.
+- Mobile responsive layout is not final.
+- Background images may need to be removed from primary section backgrounds and reused as gallery/product presentation assets.
+- Real Canva product mockups are still missing.
+- WhatsApp button has not been implemented yet.
+
+### 14.4 Completion Impact
+
+If the post-implementation audit validates the scope and frontend structure, this branch may close the Stage 2 target:
+
+- Before branch: 48%.
+- After branch: 63%.
+
+This branch must not claim completion beyond 63%.
