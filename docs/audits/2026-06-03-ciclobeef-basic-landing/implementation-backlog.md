@@ -611,3 +611,203 @@ If the post-implementation audit validates the scope and frontend structure, thi
 - After branch: 63%.
 
 This branch must not claim completion beyond 63%.
+
+---
+
+## 15. Addendum — Premium Visual Section Refinement
+
+This refinement belongs to Stage 2 commercial structure.
+
+It supports the 48% -> 63% target by improving the client-facing landing rhythm, navigation, section structure, and responsive baseline.
+
+It does not move the project beyond 63%.
+
+Still deferred:
+
+- Contact/payment wording.
+- WhatsApp click-to-chat.
+- Canva assets.
+- SEO and Open Graph metadata.
+- Accessibility pass.
+- Final QA.
+
+---
+
+## 16. Addendum — Full Panel Viewport and Responsive Refinement
+
+This refinement still belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by making the six-section landing behave as complete, intentional viewport panels on desktop/laptop while preserving content-safe responsive behavior on tablet/mobile.
+
+It does not move the project beyond 63%.
+
+Still deferred:
+
+- SEO.
+- Canva product mockups.
+- Contact/payment wording.
+- WhatsApp click-to-chat.
+- Accessibility pass.
+- Final QA.
+
+---
+
+## 18. Addendum — Hero Image Background and Contact Anchor Refinement
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by applying the real Hero image backgrounds, improving left-side Hero composition, and preserving direct contact/social anchor behavior.
+
+It does not move the project beyond 63%.
+
+It does not add forms, backend, payments, APIs, or automation.
+
+---
+
+## 19. Addendum — Hero Clarity, Products Layer, and About Contact Separation
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by refining Hero clarity, applying the Hero visual layer to Products, and separating About and Contact navigation destinations.
+
+It does not move the project beyond 63%.
+
+It does not add forms, backend, payments, APIs, or automation.
+
+It intentionally blocks arbitrary visual changes outside Hero, Products, About, and Contact.
+
+---
+
+## 20. Addendum — About and Contact Scroll Navigation Fix
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by correcting internal section navigation and deterministic scroll behavior.
+
+It does not move the project beyond 63%.
+
+It does not add forms, backend, payments, APIs, or automation.
+
+It only fixes internal navigation and scroll behavior.
+
+---
+
+## 17. Addendum — Final Premium Visual Polish
+
+This is still part of Stage 2.
+
+It supports the 48% -> 63% completion target by improving the premium visual finish, mobile Products/Gallery behavior, process chat stability, Formats mobile balance, and About presentation.
+
+It does not move the project beyond 63%.
+
+Still deferred:
+
+- SEO.
+- Real Canva mockups.
+- Real testimonials or verified customer feedback.
+- Contact/payment wording.
+- WhatsApp click-to-chat.
+- Accessibility pass.
+- Final QA.
+
+---
+
+## 21. Addendum — Global Section Scroll Normalization
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by restoring deterministic internal section navigation and panel alignment.
+
+It does not move the project beyond 63%.
+
+It does not add forms, backend, payments, APIs, or automation.
+
+It only fixes internal section navigation and scroll/panel alignment.
+
+---
+
+## 22. Addendum — About Section Compact Panel Refinement
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by improving About section containment inside the full-panel landing system.
+
+It does not move the project beyond 63%.
+
+It only adjusts About section visual containment.
+
+It does not add forms, backend, payments, APIs, or automation.
+
+---
+
+## 23. Addendum — About Trust Pillars and Process Chat Refinement
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by replacing representative feedback with defensible brand pillars and stabilizing the Process chat visual.
+
+It does not move beyond 63%.
+
+It does not add forms, backend, payments, APIs, or automation.
+
+It only adjusts About and Process.
+
+---
+
+## 24. Addendum — Process Quote Journey and Instagram DM Confirmation
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by converting Process into a clear manual Instagram DM quote journey.
+
+It does not move beyond 63%.
+
+It does not add forms, backend, payments, APIs, automation, or chatbot logic.
+
+It converts Process into a manual DM quote journey.
+
+---
+
+## 25. Addendum — Hero CTA Simplification
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by clarifying the Hero CTA hierarchy.
+
+It does not move beyond 63%.
+
+It only simplifies the Hero CTA hierarchy.
+
+---
+
+## 19. Addendum — Process Instagram Order Flow Integration
+
+This refinement belongs to the current frontend-commercial stage.
+
+It improves the Process section presentation by replacing the old visual flow with a realistic Instagram order-flow image.
+
+It does not add backend, forms, payments, APIs, or automation.
+
+It strengthens the commercial storytelling of the landing.
+
+---
+
+## 20. Addendum — Process Layout Correction
+
+This correction preserves the intended Process commercial structure.
+
+It fixes the oversized image issue by reducing the phone visual and restoring a balanced right-side explanation area.
+
+It does not add backend, forms, payments, APIs, or automation.
+
+---
+
+## 22. Addendum — Process Layout Reorder and Phone Crop
+
+This refinement improves Process section composition.
+
+It keeps the landing within the Basic Landing scope.
+
+It does not add backend, forms, payments, APIs, analytics, or automation.
+
+It does not modify the image file.
