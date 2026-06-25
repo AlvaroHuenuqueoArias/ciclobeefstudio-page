@@ -1,137 +1,125 @@
 // Smooth scroll
-document.getElementById("scrollBtn").addEventListener("click", () => {
-    document.getElementById("steps").scrollIntoView({ behavior: "smooth" });
-});
+const scrollBtn = document.getElementById("scrollBtn");
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
 
-// Mobile legal menu
-const legalToggle = document.getElementById("legalToggle");
-const legalMenu = document.getElementById("legalMenu");
+function closeMobileNav() {
+    if (!navToggle || !navLinks) {
+        return;
+    }
 
-if (legalToggle) {
-    legalToggle.addEventListener("click", () => {
-        legalMenu.classList.toggle("show");
+    navLinks.classList.remove("show");
+    navToggle.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+}
+
+function scrollToSection(target) {
+    if (!target) {
+        return;
+    }
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+if (scrollBtn) {
+    scrollBtn.addEventListener("click", () => {
+        scrollToSection(document.getElementById("products"));
     });
 }
 
-/* =========================
-    Conversational loop
-========================= */
-
-/* MODIFIED: image paths updated after moving landing to site root */
-const bubbleImages = [
-    { src: "assets/images/bubble-client-01.png", side: "right" },
-    { src: "assets/images/bubble-cbs-02.png", side: "left" },
-    { src: "assets/images/bubble-client-03.png", side: "right" },
-    { src: "assets/images/bubble-cbs-04.png", side: "left" },
-    { src: "assets/images/bubble-client-05.png", side: "right" },
-    { src: "assets/images/bubble-cbs-06.png", side: "left" },
-    { src: "assets/images/bubble-client-07.png", side: "right" },
-    { src: "assets/images/bubble-cbs-08.png", side: "left" },
-    { src: "assets/images/bubble-client-09.png", side: "right" },
-    { src: "assets/images/bubble-cbs-10.png", side: "left" },
-    { src: "assets/images/bubble-cbs-11.png", side: "left" }
-];
-
-const chatBubble = document.getElementById("chatBubble");
-const chatFinal = document.getElementById("chatFinal");
-
-let bubbleIndex = 0;
-
-const SHOW = 2400;
-const TRANS = 700;
-const FINAL = 2200;
-
-let showTimeout = null;
-let transTimeout = null;
-let finalTimeout = null;
-
-function showBubble() {
-
-    chatFinal.classList.remove("show");
-
-    const item = bubbleImages[bubbleIndex];
-
-    chatBubble.src = item.src;
-    chatBubble.dataset.side = item.side;
-
-    chatBubble.style.setProperty("--drop", `0px`);
-
-    chatBubble.classList.add("active");
-
-    showTimeout = setTimeout(() => {
-
-        chatBubble.classList.remove("active");
-
-        transTimeout = setTimeout(() => {
-
-            bubbleIndex++;
-
-            if (bubbleIndex >= bubbleImages.length) {
-                showFinal();
-            } else {
-                showBubble();
-            }
-
-        }, TRANS);
-
-    }, SHOW);
+if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("show");
+        navToggle.classList.toggle("is-open", isOpen);
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
 }
 
-function showFinal() {
-
-    chatFinal.classList.add("show");
-
-    finalTimeout = setTimeout(() => {
-
-        chatFinal.classList.remove("show");
-        bubbleIndex = 0;
-
-        showTimeout = setTimeout(showBubble, TRANS);
-
-    }, FINAL);
-}
-
-/* =========================
-    Start ONLY when section 2 is visible
-========================= */
-
-let chatStarted = false;
-const stepsSection = document.getElementById("steps");
-
-const chatObserver = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting && !chatStarted) {
-
-            chatStarted = true;
-            bubbleIndex = 0;
-            showBubble();
-
-        } else if (!entry.isIntersecting && chatStarted) {
-
-            chatStarted = false;
-
-            clearTimeout(showTimeout);
-            clearTimeout(transTimeout);
-            clearTimeout(finalTimeout);
-
-            chatBubble.classList.remove("active");
-            chatFinal.classList.remove("show");
-
-            bubbleIndex = 0;
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", event => {
+        const targetSelector = link.getAttribute("href");
+        if (!targetSelector || targetSelector === "#") {
+            return;
         }
 
-    });
+        const target = document.querySelector(targetSelector);
 
-}, {
-    threshold: 0.4
+        if (!target) {
+            return;
+        }
+
+        event.preventDefault();
+        scrollToSection(target);
+        closeMobileNav();
+    });
 });
 
-if (stepsSection) {
-    chatObserver.observe(stepsSection);
+/* =========================
+    Instagram request confirmation
+========================= */
+
+const INSTAGRAM_DM_URL = "https://ig.me/m/ciclobeefstudio";
+const requestModal = document.getElementById("requestModal");
+const requestModalContinue = document.getElementById("requestModalContinue");
+const requestModalCancel = document.getElementById("requestModalCancel");
+const requestTriggers = document.querySelectorAll("[data-request-trigger]");
+
+let lastRequestTrigger = null;
+
+function openRequestModal(trigger) {
+    if (!requestModal) {
+        return;
+    }
+
+    lastRequestTrigger = trigger;
+    requestModal.hidden = false;
+
+    if (requestModalContinue) {
+        requestModalContinue.focus();
+    }
 }
 
+function closeRequestModal() {
+    if (!requestModal) {
+        return;
+    }
 
+    requestModal.hidden = true;
 
+    if (lastRequestTrigger) {
+        lastRequestTrigger.focus();
+    }
+}
 
+requestTriggers.forEach(trigger => {
+    trigger.addEventListener("click", event => {
+        event.preventDefault();
+        closeMobileNav();
+        openRequestModal(trigger);
+    });
+});
+
+if (requestModalContinue) {
+    requestModalContinue.addEventListener("click", () => {
+        window.open(INSTAGRAM_DM_URL, "_blank", "noopener,noreferrer");
+        closeRequestModal();
+    });
+}
+
+if (requestModalCancel) {
+    requestModalCancel.addEventListener("click", closeRequestModal);
+}
+
+if (requestModal) {
+    requestModal.addEventListener("click", event => {
+        if (event.target === requestModal) {
+            closeRequestModal();
+        }
+    });
+}
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && requestModal && !requestModal.hidden) {
+        closeRequestModal();
+    }
+});

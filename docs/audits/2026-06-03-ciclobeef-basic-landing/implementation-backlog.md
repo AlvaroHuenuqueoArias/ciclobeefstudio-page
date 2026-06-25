@@ -472,3 +472,342 @@ After the Basic Landing reaches 100%, future work may continue with:
 - Combo 4: Landing + Leads + Basic ChatBot.
 
 Those future stages must be developed in separate branches and must not be mixed into the Basic Landing release.
+
+---
+
+## 13. Addendum — Pre-Implementation Frontend Diagnosis
+
+Date: 2026-06-03.
+
+Model:
+
+- DeepSeek V4 Pro.
+
+Branch:
+
+- feature/basic-landing-commercial-structure.
+
+### 13.1 Diagnosis Summary
+
+The pre-implementation diagnosis confirmed that the current landing page has a strong visual foundation but still behaves as a two-section brand introduction.
+
+The next implementation must focus on commercial structure and frontend stability before adding future features.
+
+### 13.2 Accepted Scope for This Branch
+
+This branch should implement:
+
+- Hero commercial structure.
+- What We Create section.
+- Featured Collections section.
+- How It Works section.
+- Available Formats section.
+- Why CicloBeef Studio section.
+- Start Your Request section.
+- Basic CSS structure for commercial sections.
+- Bubble visual stabilization.
+- Bubble image preloading.
+- Basic responsive section layout.
+
+### 13.3 Technical Issues to Fix in This Branch
+
+The following issues should be handled during this implementation:
+
+1. Replace broad bubble animation transition with specific opacity and transform transitions.
+2. Add stable aspect ratio or explicit dimensions for bubble images.
+3. Preload all bubble images before the animation cycle.
+4. Avoid visible position snapping when bubble side changes.
+5. Reduce fragile layout behavior caused by hardcoded hero spacing.
+6. Add reusable CSS section and card structures.
+7. Preserve the current chat bubble concept without turning it into a chatbot.
+
+### 13.4 Issues Deferred to Later Branches
+
+The following items are intentionally deferred:
+
+- Full SEO metadata.
+- Favicon.
+- Open Graph social preview replacement.
+- Canva product mockups.
+- Terms payment wording.
+- Social media URL verification.
+- Analytics.
+- Full accessibility pass.
+- Final release QA.
+
+### 13.5 Completion Target
+
+Before this branch:
+
+- 48%.
+
+Expected after this branch:
+
+- 63%.
+
+This branch must not claim 71% completion because the full copy/value proposition stage remains separate.
+
+---
+
+## 14. Addendum — Post-Codex Implementation Review Pending
+
+Date: 2026-06-04.
+
+Branch:
+
+- feature/basic-landing-commercial-structure.
+
+Codex CLI implemented the first commercial structure for the Basic Landing.
+
+### 14.1 Implemented in Current Branch
+
+- Hero commercial copy.
+- What We Create section.
+- Featured Collections section.
+- How It Works section.
+- Available Formats section.
+- Why CicloBeef Studio section.
+- Start Your Request section.
+- Visible email CTA.
+- Social buttons moved into the request section.
+- Bubble visual sequence moved into How It Works.
+- Bubble image preloading.
+- Bubble transition stabilization.
+- Initial responsive section/grid styles.
+
+### 14.2 Required Before Commit
+
+The implementation must be audited visually and technically before commit.
+
+Required checks:
+
+1. Desktop visual rhythm.
+2. Mobile responsiveness.
+3. Section height and scroll behavior.
+4. Bubble animation stability.
+5. No forbidden scope additions.
+6. No forms.
+7. No backend.
+8. No payment integration.
+9. No provider API integration.
+10. No chatbot logic.
+11. No unwanted CHANGELOG.MD inclusion.
+
+### 14.3 Known Visual Concerns
+
+The current implementation may still require refinement in later branches or before commit:
+
+- Some section transitions may expose small next-section strips during scrolling.
+- Mobile responsive layout is not final.
+- Background images may need to be removed from primary section backgrounds and reused as gallery/product presentation assets.
+- Real Canva product mockups are still missing.
+- WhatsApp button has not been implemented yet.
+
+### 14.4 Completion Impact
+
+If the post-implementation audit validates the scope and frontend structure, this branch may close the Stage 2 target:
+
+- Before branch: 48%.
+- After branch: 63%.
+
+This branch must not claim completion beyond 63%.
+
+---
+
+## 15. Addendum — Premium Visual Section Refinement
+
+This refinement belongs to Stage 2 commercial structure.
+
+It supports the 48% -> 63% target by improving the client-facing landing rhythm, navigation, section structure, and responsive baseline.
+
+It does not move the project beyond 63%.
+
+Still deferred:
+
+- Contact/payment wording.
+- WhatsApp click-to-chat.
+- Canva assets.
+- SEO and Open Graph metadata.
+- Accessibility pass.
+- Final QA.
+
+---
+
+## 16. Addendum — Full Panel Viewport and Responsive Refinement
+
+This refinement still belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by making the six-section landing behave as complete, intentional viewport panels on desktop/laptop while preserving content-safe responsive behavior on tablet/mobile.
+
+It does not move the project beyond 63%.
+
+Still deferred:
+
+- SEO.
+- Canva product mockups.
+- Contact/payment wording.
+- WhatsApp click-to-chat.
+- Accessibility pass.
+- Final QA.
+
+---
+
+## 18. Addendum — Hero Image Background and Contact Anchor Refinement
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by applying the real Hero image backgrounds, improving left-side Hero composition, and preserving direct contact/social anchor behavior.
+
+It does not move the project beyond 63%.
+
+It does not add forms, backend, payments, APIs, or automation.
+
+---
+
+## 19. Addendum — Hero Clarity, Products Layer, and About Contact Separation
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by refining Hero clarity, applying the Hero visual layer to Products, and separating About and Contact navigation destinations.
+
+It does not move the project beyond 63%.
+
+It does not add forms, backend, payments, APIs, or automation.
+
+It intentionally blocks arbitrary visual changes outside Hero, Products, About, and Contact.
+
+---
+
+## 20. Addendum — About and Contact Scroll Navigation Fix
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by correcting internal section navigation and deterministic scroll behavior.
+
+It does not move the project beyond 63%.
+
+It does not add forms, backend, payments, APIs, or automation.
+
+It only fixes internal navigation and scroll behavior.
+
+---
+
+## 17. Addendum — Final Premium Visual Polish
+
+This is still part of Stage 2.
+
+It supports the 48% -> 63% completion target by improving the premium visual finish, mobile Products/Gallery behavior, process chat stability, Formats mobile balance, and About presentation.
+
+It does not move the project beyond 63%.
+
+Still deferred:
+
+- SEO.
+- Real Canva mockups.
+- Real testimonials or verified customer feedback.
+- Contact/payment wording.
+- WhatsApp click-to-chat.
+- Accessibility pass.
+- Final QA.
+
+---
+
+## 21. Addendum — Global Section Scroll Normalization
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by restoring deterministic internal section navigation and panel alignment.
+
+It does not move the project beyond 63%.
+
+It does not add forms, backend, payments, APIs, or automation.
+
+It only fixes internal section navigation and scroll/panel alignment.
+
+---
+
+## 22. Addendum — About Section Compact Panel Refinement
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by improving About section containment inside the full-panel landing system.
+
+It does not move the project beyond 63%.
+
+It only adjusts About section visual containment.
+
+It does not add forms, backend, payments, APIs, or automation.
+
+---
+
+## 23. Addendum — About Trust Pillars and Process Chat Refinement
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by replacing representative feedback with defensible brand pillars and stabilizing the Process chat visual.
+
+It does not move beyond 63%.
+
+It does not add forms, backend, payments, APIs, or automation.
+
+It only adjusts About and Process.
+
+---
+
+## 24. Addendum — Process Quote Journey and Instagram DM Confirmation
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by converting Process into a clear manual Instagram DM quote journey.
+
+It does not move beyond 63%.
+
+It does not add forms, backend, payments, APIs, automation, or chatbot logic.
+
+It converts Process into a manual DM quote journey.
+
+---
+
+## 25. Addendum — Hero CTA Simplification
+
+This refinement belongs to Stage 2.
+
+It supports the 48% -> 63% completion target by clarifying the Hero CTA hierarchy.
+
+It does not move beyond 63%.
+
+It only simplifies the Hero CTA hierarchy.
+
+---
+
+## 19. Addendum — Process Instagram Order Flow Integration
+
+This refinement belongs to the current frontend-commercial stage.
+
+It improves the Process section presentation by replacing the old visual flow with a realistic Instagram order-flow image.
+
+It does not add backend, forms, payments, APIs, or automation.
+
+It strengthens the commercial storytelling of the landing.
+
+---
+
+## 20. Addendum — Process Layout Correction
+
+This correction preserves the intended Process commercial structure.
+
+It fixes the oversized image issue by reducing the phone visual and restoring a balanced right-side explanation area.
+
+It does not add backend, forms, payments, APIs, or automation.
+
+---
+
+## 22. Addendum — Process Layout Reorder and Phone Crop
+
+This refinement improves Process section composition.
+
+It keeps the landing within the Basic Landing scope.
+
+It does not add backend, forms, payments, APIs, analytics, or automation.
+
+It does not modify the image file.

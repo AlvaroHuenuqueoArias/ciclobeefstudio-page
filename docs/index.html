@@ -3,8 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CicloBeef Studio</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
 
@@ -18,65 +22,329 @@
 <body>
 
     <!-- SECTION 1: HERO FULLSCREEN -->
-    <section class="hero" id="hero">
+    <section class="hero landing-panel panel-hero" id="hero">
 
-        <div class="legal-links">
-            <button class="legal-toggle" id="legalToggle">☰</button>
-            <div class="legal-menu" id="legalMenu">
-                <a href="/privacy/">Privacy</a>
-                <a href="/terms/">Terms</a>
-            </div>
-        </div>
-
-        <div class="overlay">
-
-            <!-- BRAND LOGO -->
-            <!-- MODIFIED: path updated after moving landing to site root -->
-            <div class="brand-emblem">
+        <nav class="landing-nav" aria-label="Main navigation">
+            <a href="#hero" class="nav-logo" aria-label="CicloBeef Studio home">
                 <img
                     src="assets/images/ciclobeef-studio.png"
                     alt="CicloBeef Studio"
-                    class="brand-img"
+                    class="nav-logo-img"
                 />
-            </div>
+            </a>
 
-            <h1>Transforming Culture</h1>
-            <p>Art that preserves history, challenges silence, and invites the world to reflect.</p>
-            <button id="scrollBtn">Explore How It Works</button>
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#formats">Formats</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="overlay panel-inner">
+
+            <h1>Premium Wall Art That Speaks</h1>
+            <p>High-end cultural prints for collectors, offices, and spaces that demand more than decoration.</p>
+            <div class="hero-actions">
+                <button id="scrollBtn">Explore Collections</button>
+            </div>
         </div>
 
     </section>
 
-    <!-- SECTION 2 -->
-    <section class="steps" id="steps">
+    <main>
+        <section class="section landing-panel section-light" id="products">
+            <div class="section-inner panel-inner">
+                <h2 class="section-title">Collections That Start Conversations</h2>
+                <p class="section-kicker">Swipe to explore the collection directions.</p>
+                <div class="cards-grid">
+                    <article class="collection-card">
+                        <div class="placeholder-art" aria-hidden="true">
+                            <span>Preview</span>
+                        </div>
+                        <h3>Historical Memory Prints</h3>
+                        <p>Editorial artwork shaped by memory, context, and visual tension.</p>
+                    </article>
+                    <article class="collection-card">
+                        <div class="placeholder-art" aria-hidden="true">
+                            <span>Preview</span>
+                        </div>
+                        <h3>Political Reflection Artwork</h3>
+                        <p>Premium pieces built for spaces that welcome critical conversation.</p>
+                    </article>
+                    <article class="collection-card">
+                        <div class="placeholder-art" aria-hidden="true">
+                            <span>Preview</span>
+                        </div>
+                        <h3>Social Commentary Collections</h3>
+                        <p>Visual work that turns cultural questions into strong wall pieces.</p>
+                    </article>
+                    <article class="collection-card">
+                        <div class="placeholder-art" aria-hidden="true">
+                            <span>Preview</span>
+                        </div>
+                        <h3>Custom Cultural Pieces</h3>
+                        <p>Commission-ready concepts for collectors, offices, and curated spaces.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-        <h2>How your artwork journey begins</h2>
+        <section class="section landing-panel section-dark panel-compact" id="gallery">
+            <div class="section-inner panel-inner">
+                <h2 class="section-title">Featured Works</h2>
+                <p class="section-kicker">Static placeholders for future Canva mockups.</p>
+                <div class="cards-grid featured-grid">
+                    <article class="gallery-card">
+                        <div class="gallery-placeholder" aria-hidden="true">
+                            <span>Canva Mockup Slot</span>
+                        </div>
+                        <h3>Archive Signal</h3>
+                    </article>
+                    <article class="gallery-card">
+                        <div class="gallery-placeholder" aria-hidden="true">
+                            <span>Canva Mockup Slot</span>
+                        </div>
+                        <h3>Civic Echo</h3>
+                    </article>
+                    <article class="gallery-card">
+                        <div class="gallery-placeholder" aria-hidden="true">
+                            <span>Canva Mockup Slot</span>
+                        </div>
+                        <h3>Public Memory</h3>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-        <div class="chat-container">
-            <!-- MODIFIED: path updated after moving landing to site root -->
-            <img
-                id="chatBubble"
-                class="chat-bubble"
-                src="assets/images/bubble-client-01.png"
-                alt="Conversation bubble"
-            />
-            <div id="chatFinal" class="chat-final">
-                Ready to start your premium artwork journey?
+        <section class="section landing-panel section-light" id="formats">
+            <div class="section-inner panel-inner">
+                <h2 class="section-title">Your Format, Your Space</h2>
+                <div class="cards-grid format-grid">
+                    <article class="format-card">
+                        <h3>Essential Cultural Print</h3>
+                        <p>30 x 40 cm</p>
+                    </article>
+                    <article class="format-card">
+                        <h3>Signature Cultural Print</h3>
+                        <p>40 x 60 cm</p>
+                    </article>
+                    <article class="format-card">
+                        <h3>Collector Cultural Print</h3>
+                        <p>60 x 80 cm</p>
+                    </article>
+                    <article class="format-card">
+                        <h3>Gallery Quote</h3>
+                        <p>70 x 100 cm by custom quote</p>
+                    </article>
+                </div>
+                <p class="quote-note">Prices are provided after a personalized quote based on format, finish, delivery details, shipping conditions, and availability.</p>
+            </div>
+        </section>
+
+        <section class="section landing-panel section-brand" id="process">
+            <div class="section-inner panel-inner">
+                <h2 class="section-title">From Inquiry to Delivery</h2>
+                <div class="process-layout">
+                    <div class="process-content">
+                        <p class="process-subtitle">A simple Instagram-based order flow designed to confirm details, payment, production, and tracking without adding checkout complexity.</p>
+                        <ol class="process-steps">
+                            <li>Choose the artwork, product type, material, size, and frame.</li>
+                            <li>Send complete delivery details for an accurate final quote.</li>
+                            <li>Receive the confirmed total and secure payment link.</li>
+                            <li>Payment is confirmed and the order enters production.</li>
+                            <li>Tracking is shared after dispatch.</li>
+                        </ol>
+                        <a href="#request-modal" class="process-request-cta" data-request-trigger>Start a Request</a>
+                    </div>
+                    <div class="process-visual" aria-label="Instagram order flow preview">
+                        <figure class="process-phone-stage">
+                            <img
+                                src="assets/images/process-instagram-order-flow.png"
+                                alt="Instagram-style order flow showing the CicloBeef Studio purchase process from inquiry to payment confirmation and tracking"
+                                class="process-order-flow-image"
+                            />
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section landing-panel section-dark" id="about">
+            <div class="section-inner panel-inner request-inner">
+                <h2 class="section-title">Why CicloBeef Studio</h2>
+                <p class="about-statement">
+                    CicloBeef Studio creates premium cultural wall art for collectors, offices, and curated spaces that want historical meaning, visual impact, and conversation-starting work.
+                </p>
+                <div class="cards-grid trust-grid">
+                    <article class="trust-card">
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                        <h3>Research-Based Artwork</h3>
+                    </article>
+                    <article class="trust-card">
+                        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                        <h3>Premium Visual Production</h3>
+                    </article>
+                    <article class="trust-card">
+                        <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                        <h3>International-Ready Requests</h3>
+                    </article>
+                    <article class="trust-card">
+                        <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+                        <h3>Custom Cultural Pieces</h3>
+                    </article>
+                </div>
+
+                <div class="brand-pillars">
+                    <h3>Built for Cultural Presence</h3>
+                    <p>CicloBeef Studio creates premium cultural wall art for spaces that value memory, symbolism, and visual conversation.</p>
+                    <div class="brand-pillar-grid">
+                        <article class="brand-pillar-card">
+                            <h4>Editorial Depth</h4>
+                            <p>Artwork shaped around historical, social, and political memory.</p>
+                        </article>
+                        <article class="brand-pillar-card">
+                            <h4>Premium Visual Direction</h4>
+                            <p>A refined visual language built for offices, homes, galleries, and curated interiors.</p>
+                        </article>
+                        <article class="brand-pillar-card">
+                            <h4>Quote-Based Production</h4>
+                            <p>Each request is assessed by format, finish, delivery details, and production conditions before pricing.</p>
+                        </article>
+                        <article class="brand-pillar-card">
+                            <h4>Conversation-Starting Pieces</h4>
+                            <p>Designed to become a visual statement, not generic decoration.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section landing-panel section-dark contact-panel" id="contact">
+            <div class="section-inner panel-inner request-inner">
+                <div class="contact-block">
+                    <h2 class="section-title">Start Your Request</h2>
+                    <div class="contact-divider" aria-hidden="true"></div>
+                    <p class="request-copy">
+                        Tell us your preferred collection, size, and delivery details, including destination address and postal code when applicable. We will send you a personalized quote before production.
+                    </p>
+                    <div class="social-buttons primary-social" aria-label="Contact CicloBeef Studio on social media">
+                        <a href="#request-modal" aria-label="Instagram" data-request-trigger><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/ciclobeefstudio" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://linkedin.com/company/ciclobeefstudio" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <p class="email-secondary">
+                        or email us at <a href="mailto:ciclobeefstudio@gmail.com">ciclobeefstudio@gmail.com</a>
+                    </p>
+                </div>
+                <div class="contact-directory" aria-label="CicloBeef Studio directory">
+                    <div class="directory-column">
+                        <h3>CicloBeef Studio</h3>
+                        <details>
+                            <summary>Who we are</summary>
+                            <p>CicloBeef Studio creates premium cultural wall art for spaces that value memory, symbolism, and visual conversation.</p>
+                        </details>
+                        <details>
+                            <summary>Brand vision</summary>
+                            <p>The studio is built around artwork that feels editorial, intentional, and designed for homes, offices, galleries, and curated interiors.</p>
+                        </details>
+                        <details>
+                            <summary>Cultural direction</summary>
+                            <p>Each piece is shaped around historical, social, or political meaning rather than generic decoration.</p>
+                        </details>
+                    </div>
+                    <div class="directory-column">
+                        <h3>Products</h3>
+                        <details>
+                            <summary>Collections</summary>
+                            <p>Collections organize the artwork by cultural direction, visual tone, and the kind of statement the piece is designed to create.</p>
+                        </details>
+                        <details>
+                            <summary>Featured works</summary>
+                            <p>Featured works act as visual references for the type of premium wall art CicloBeef Studio develops and prepares for production.</p>
+                        </details>
+                        <details>
+                            <summary>Formats</summary>
+                            <p>Available formats help define the size and visual presence of the artwork before a personalized quote is prepared.</p>
+                        </details>
+                        <details>
+                            <summary>Custom quote</summary>
+                            <p>Custom quote requests are reviewed manually according to format, finish, framing preference, complete delivery details, and production conditions.</p>
+                        </details>
+                    </div>
+                    <div class="directory-column">
+                        <h3>How to Buy</h3>
+                        <details>
+                            <summary>Choose</summary>
+                            <p>Choose the collection or visual direction that best fits your space.</p>
+                        </details>
+                        <details>
+                            <summary>Prepare</summary>
+                            <p>Prepare your preferred format, framing preference, intended space, and complete delivery details for accurate shipping.</p>
+                        </details>
+                        <details>
+                            <summary>Message</summary>
+                            <p>Send your request through Instagram DM or another listed contact channel.</p>
+                        </details>
+                        <details>
+                            <summary>Quote</summary>
+                            <p>CicloBeef Studio reviews the request, delivery details, and production conditions before sending a personalized quote.</p>
+                        </details>
+                    </div>
+                    <div class="directory-column">
+                        <h3>Contact</h3>
+                        <p class="directory-note">Instagram DM is the preferred channel for new artwork requests.</p>
+                        <a href="#request-modal" data-request-trigger>Instagram DM</a>
+                        <a href="https://facebook.com/ciclobeefstudio">Facebook</a>
+                        <a href="https://linkedin.com/company/ciclobeefstudio">LinkedIn</a>
+                        <a href="mailto:ciclobeefstudio@gmail.com">Email</a>
+                    </div>
+                    <div class="directory-column">
+                        <h3>Legal</h3>
+                        <p class="directory-note">Legal pages explain the basic terms, communication rules, and privacy information for CicloBeef Studio.</p>
+                        <a href="/privacy/">Privacy Policy</a>
+                        <a href="/terms/">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+                <div class="contact-faq" aria-label="Before You Message Us">
+                    <h3>Before You Message Us</h3>
+                    <details>
+                        <summary>How does the quote process work?</summary>
+                        <p>Send us your preferred collection, format, framing preference, and complete delivery details, including destination address and postal code when applicable. We will review production, finish, and shipping conditions before confirming your personalized quote.</p>
+                    </details>
+                    <details>
+                        <summary>Do you show fixed prices?</summary>
+                        <p>Not yet. Prices depend on format, finish, complete delivery details, production conditions, and shipping. Each request is quoted manually before production.</p>
+                    </details>
+                    <details>
+                        <summary>Where should I send my request?</summary>
+                        <p>Instagram DM is the preferred channel. You can also contact CicloBeef Studio through the listed social channels or by email.</p>
+                    </details>
+                </div>
+                <!-- TODO: Add WhatsApp click-to-chat when business phone number is activated -->
+            </div>
+        </section>
+    </main>
+
+    <div class="request-modal" id="requestModal" role="dialog" aria-modal="true" aria-labelledby="requestModalTitle" hidden>
+        <div class="request-modal__panel">
+            <div class="request-modal__accent" aria-hidden="true"></div>
+            <h2 id="requestModalTitle">Open Instagram DM?</h2>
+            <p>Do you want to open Instagram DM to request your artwork?</p>
+            <div class="request-modal__actions">
+                <button type="button" class="request-modal__primary" id="requestModalContinue">Continue to Instagram</button>
+                <button type="button" class="request-modal__secondary" id="requestModalCancel">Cancel</button>
             </div>
         </div>
-
-        <p class="social-cta">
-            Start your premium artwork journey today. Connect with us on social media for fast, private, and seamless ordering.
-        </p>
-
-        <div class="social-buttons">
-            <a href="https://instagram.com/ciclobeefstudio"><i class="fab fa-instagram"></i></a>
-            <a href="https://facebook.com/ciclobeefstudio"><i class="fab fa-facebook"></i></a>
-            <a href="https://linkedin.com/company/ciclobeefstudio"><i class="fab fa-linkedin"></i></a>
-            <a href="https://x.com/company/ciclobeefstudio"><i class="fab fa-x-twitter"></i></a>
-        </div>
-
-    </section>
+    </div>
 
     <footer>
         © CicloBeef Studio
@@ -86,11 +354,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
