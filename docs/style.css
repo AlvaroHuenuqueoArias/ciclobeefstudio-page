@@ -514,7 +514,7 @@ button:hover {
     display: grid;
     grid-template-columns: minmax(280px, 0.95fr) minmax(260px, 1.05fr);
     grid-template-areas: "content visual";
-    gap: clamp(1.5rem, 3.2vw, 2.6rem);
+    gap: clamp(1.2rem, 2.6vw, 2.1rem);
     align-items: center;
     width: min(100%, var(--content-max-width));
     margin: 0 auto;
@@ -546,10 +546,10 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: min(100%, 25rem);
+    width: min(100%, 26rem);
     margin: 0;
     line-height: 0;
-    transform: translate(0.35rem, -1.25rem);
+    transform: translate(-0.25rem, -1.25rem);
 }
 
 .process-order-flow-image {
@@ -566,18 +566,24 @@ button:hover {
         contrast(1.09)
         saturate(1.05)
         drop-shadow(0 22px 36px rgba(26, 26, 26, 0.16));
-    transition: transform 280ms ease, filter 280ms ease;
-    will-change: transform;
-    cursor: zoom-in;
+    transition: none;
 }
 
-.process-phone-stage:hover .process-order-flow-image {
-    transform: scale(1.07);
-    filter:
-        brightness(1.03)
-        contrast(1.1)
-        saturate(1.06)
-        drop-shadow(0 28px 42px rgba(26, 26, 26, 0.2));
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .process-order-flow-image {
+        transition: transform 280ms ease, filter 280ms ease;
+        will-change: transform;
+        cursor: zoom-in;
+    }
+
+    .process-phone-stage:hover .process-order-flow-image {
+        transform: scale(1.06);
+        filter:
+            brightness(1.03)
+            contrast(1.1)
+            saturate(1.06)
+            drop-shadow(0 28px 42px rgba(26, 26, 26, 0.2));
+    }
 }
 
 .process-steps {
