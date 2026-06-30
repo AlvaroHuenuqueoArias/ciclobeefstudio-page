@@ -701,6 +701,24 @@ button:hover {
         linear-gradient(180deg, #202020 0%, var(--brand-black) 100%);
 }
 
+#contact {
+    display: flex;
+    align-items: stretch;
+    height: 100svh;
+    min-height: 100svh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+}
+
+#contact .request-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100svh - clamp(4rem, 6.2vw, 6rem) * 2);
+    padding-bottom: 0;
+}
+
 #products,
 #gallery,
 #process,
@@ -1182,6 +1200,14 @@ footer a:visited {
 
 footer a:hover {
     color: var(--white);
+}
+
+#contact footer {
+    width: 100vw;
+    margin-top: 1.75rem;
+    margin-right: calc(50% - 50vw);
+    margin-bottom: calc(clamp(4rem, 6.2vw, 6rem) * -1);
+    margin-left: calc(50% - 50vw);
 }
 
 /* =========================
