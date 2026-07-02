@@ -1491,6 +1491,65 @@ footer a:hover {
     RESPONSIVE
 ========================= */
 
+@media (min-width: 1025px) {
+    .overlay {
+        display: block;
+    }
+
+    .hero-visual-slot {
+        display: none;
+    }
+
+    .product-system {
+        display: none;
+    }
+
+    .editorial-grid {
+        margin-top: 0;
+    }
+
+    .gallery-track {
+        display: grid;
+        grid-auto-flow: initial;
+        grid-auto-columns: initial;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow: visible;
+        scroll-snap-type: none;
+        padding: 0;
+    }
+
+    .gallery-track .gallery-card {
+        scroll-snap-align: none;
+    }
+
+    .gallery-controls {
+        display: none;
+    }
+
+    #formats .format-summary-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #formats .format-grid {
+        display: none;
+    }
+
+    #quote {
+        min-height: auto;
+        padding-top: clamp(4rem, 5vw, 5rem);
+        padding-bottom: clamp(4rem, 5vw, 5rem);
+    }
+
+    #quote .section-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .quote-form {
+        width: min(100%, var(--content-max-width));
+    }
+}
+
 @media (max-width: 980px) {
     .cards-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1547,6 +1606,10 @@ footer a:hover {
 }
 
 @media (max-width: 1024px) {
+    #formats .format-summary-grid {
+        display: none;
+    }
+
     .product-system {
         grid-template-columns: 1fr;
     }

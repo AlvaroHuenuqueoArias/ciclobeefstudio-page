@@ -138,9 +138,7 @@ function renderCatalogList(selector, items) {
 
 function renderFormats() {
     const grid = document.querySelector("[data-format-grid]");
-    if (!grid) {
-        return;
-    }
+    const summaryGrid = document.querySelector("[data-format-summary-grid]");
 
     const cards = [];
     CATALOG.products.forEach(product => {
@@ -157,7 +155,19 @@ function renderFormats() {
         });
     });
 
-    grid.innerHTML = cards.join("");
+    if (grid) {
+        grid.innerHTML = cards.join("");
+    }
+
+    if (summaryGrid) {
+        summaryGrid.innerHTML = CATALOG.sizes.map(size => `
+            <article class="format-card" tabindex="0" aria-label="Official size ${size}">
+                <h3>Official Size</h3>
+                <p>${size}</p>
+                <span>Available for official products and orientations by quote.</span>
+            </article>
+        `).join("");
+    }
 }
 
 function populateSelect(selector, values, label) {
