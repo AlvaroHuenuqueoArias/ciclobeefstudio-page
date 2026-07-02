@@ -33,7 +33,7 @@
                 />
             </a>
 
-            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -44,17 +44,22 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#formats">Formats</a></li>
                 <li><a href="#process">Process</a></li>
+                <li><a href="#quote">Quote</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
         <div class="overlay panel-inner">
-
-            <h1>Premium Wall Art That Speaks</h1>
-            <p>High-end cultural prints for collectors, offices, and spaces that demand more than decoration.</p>
-            <div class="hero-actions">
-                <button id="scrollBtn">Explore Collections</button>
+            <div class="hero-copy">
+                <h1>Premium Wall Art That Speaks</h1>
+                <p>High-end cultural prints for collectors, offices, and spaces that demand more than decoration.</p>
+                <div class="hero-actions">
+                    <button id="scrollBtn">Explore Collections</button>
+                </div>
+            </div>
+            <div class="hero-visual-slot" aria-label="Artwork or mockup placeholder">
+                <span>Artwork Preview Slot</span>
             </div>
         </div>
 
@@ -63,86 +68,98 @@
     <main>
         <section class="section landing-panel section-light" id="products">
             <div class="section-inner panel-inner">
-                <h2 class="section-title">Collections That Start Conversations</h2>
-                <p class="section-kicker">Swipe to explore the collection directions.</p>
-                <div class="cards-grid">
+                <h2 class="section-title">Products and Collections</h2>
+                <p class="section-kicker">Choose an editorial direction, then select the physical product, orientation, and size.</p>
+                <div class="product-system" aria-label="Official product options">
+                    <section class="product-group" aria-labelledby="productOptionsTitle">
+                        <h3 id="productOptionsTitle">Product</h3>
+                        <div class="option-grid" data-catalog-products></div>
+                    </section>
+                    <section class="product-group" aria-labelledby="orientationOptionsTitle">
+                        <h3 id="orientationOptionsTitle">Orientation</h3>
+                        <div class="option-grid compact" data-catalog-orientations></div>
+                    </section>
+                    <section class="product-group" aria-labelledby="sizeOptionsTitle">
+                        <h3 id="sizeOptionsTitle">Size</h3>
+                        <div class="option-grid" data-catalog-sizes></div>
+                    </section>
+                </div>
+                <div class="cards-grid editorial-grid" aria-label="Editorial collection directions">
                     <article class="collection-card">
                         <div class="placeholder-art" aria-hidden="true">
                             <span>Preview</span>
                         </div>
-                        <h3>Historical Memory Prints</h3>
-                        <p>Editorial artwork shaped by memory, context, and visual tension.</p>
+                        <h3>Archive Texture Studies</h3>
+                        <p>Neutral paper, archive, and material references for future artwork previews.</p>
                     </article>
                     <article class="collection-card">
                         <div class="placeholder-art" aria-hidden="true">
                             <span>Preview</span>
                         </div>
-                        <h3>Political Reflection Artwork</h3>
-                        <p>Premium pieces built for spaces that welcome critical conversation.</p>
+                        <h3>Cultural Object Compositions</h3>
+                        <p>Replaceable arrangements of frames, objects, and gallery details.</p>
                     </article>
                     <article class="collection-card">
                         <div class="placeholder-art" aria-hidden="true">
                             <span>Preview</span>
                         </div>
-                        <h3>Social Commentary Collections</h3>
-                        <p>Visual work that turns cultural questions into strong wall pieces.</p>
+                        <h3>Typography and Memory</h3>
+                        <p>Editorial placeholders based on type, paper, and abstract composition.</p>
                     </article>
                     <article class="collection-card">
                         <div class="placeholder-art" aria-hidden="true">
                             <span>Preview</span>
                         </div>
-                        <h3>Custom Cultural Pieces</h3>
-                        <p>Commission-ready concepts for collectors, offices, and curated spaces.</p>
+                        <h3>Gallery Mockup Concepts</h3>
+                        <p>Neutral wall and frame studies prepared for final artwork mockups.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section landing-panel section-dark panel-compact" id="gallery">
+        <section class="section landing-panel section-light panel-compact" id="gallery">
             <div class="section-inner panel-inner">
-                <h2 class="section-title">Featured Works</h2>
-                <p class="section-kicker">Static placeholders for future Canva mockups.</p>
-                <div class="cards-grid featured-grid">
-                    <article class="gallery-card">
-                        <div class="gallery-placeholder" aria-hidden="true">
-                            <span>Canva Mockup Slot</span>
-                        </div>
-                        <h3>Archive Signal</h3>
-                    </article>
-                    <article class="gallery-card">
-                        <div class="gallery-placeholder" aria-hidden="true">
-                            <span>Canva Mockup Slot</span>
-                        </div>
-                        <h3>Civic Echo</h3>
-                    </article>
-                    <article class="gallery-card">
-                        <div class="gallery-placeholder" aria-hidden="true">
-                            <span>Canva Mockup Slot</span>
-                        </div>
-                        <h3>Public Memory</h3>
-                    </article>
+                <h2 class="section-title">Gallery Preview</h2>
+                <p class="section-kicker">Neutral placeholders for future CicloBeef Studio artworks and mockups.</p>
+                <div class="gallery-slider" data-gallery-slider aria-roledescription="carousel" aria-label="Neutral artwork placeholder gallery">
+                    <div class="gallery-track" data-gallery-track>
+                        <article class="gallery-card" aria-roledescription="slide" aria-label="1 of 3">
+                            <div class="gallery-placeholder" role="img" aria-label="Neutral paper texture placeholder">
+                                <span>Paper Texture</span>
+                            </div>
+                            <h3>Paper Study</h3>
+                        </article>
+                        <article class="gallery-card" aria-roledescription="slide" aria-label="2 of 3">
+                            <div class="gallery-placeholder" role="img" aria-label="Neutral frame mockup placeholder">
+                                <span>Frame Mockup</span>
+                            </div>
+                            <h3>Frame Study</h3>
+                        </article>
+                        <article class="gallery-card" aria-roledescription="slide" aria-label="3 of 3">
+                            <div class="gallery-placeholder" role="img" aria-label="Neutral acrylic surface placeholder">
+                                <span>Acrylic Detail</span>
+                            </div>
+                            <h3>Acrylic Surface</h3>
+                        </article>
+                    </div>
+                    <div class="gallery-controls" aria-label="Gallery controls">
+                        <button type="button" class="gallery-control" data-gallery-prev aria-label="Previous gallery item">
+                            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <div class="gallery-dots" data-gallery-dots aria-label="Gallery position"></div>
+                        <button type="button" class="gallery-control" data-gallery-next aria-label="Next gallery item">
+                            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="section landing-panel section-light" id="formats">
             <div class="section-inner panel-inner">
-                <h2 class="section-title">Your Format, Your Space</h2>
-                <div class="cards-grid format-grid">
-                    <article class="format-card">
-                        <h3>Signature Cultural Print</h3>
-                        <p>40 x 60 cm</p>
-                    </article>
-                    <article class="format-card">
-                        <h3>Collector Cultural Print</h3>
-                        <p>60 x 80 cm</p>
-                    </article>
-                    <article class="format-card">
-                        <h3>Gallery Quote</h3>
-                        <p>70 x 100 cm by custom quote</p>
-                    </article>
-                </div>
-                <p class="quote-note">Prices are provided after a personalized quote based on format, finish, delivery details, shipping conditions, and availability.</p>
+                <h2 class="section-title">Official Formats</h2>
+                <div class="cards-grid format-grid" data-format-grid aria-label="Valid product, orientation, and size combinations"></div>
+                <p class="quote-note">Prices are provided after a personalized quote based on product, orientation, size, quantity, delivery details, shipping conditions, and applicable taxes.</p>
             </div>
         </section>
 
@@ -151,26 +168,133 @@
                 <h2 class="section-title">From Inquiry to Delivery</h2>
                 <div class="process-layout">
                     <div class="process-content">
-                        <p class="process-subtitle">A simple Instagram-based order flow designed to confirm details, payment, production, and tracking without adding checkout complexity.</p>
+                        <p class="process-subtitle">A clear request flow for selecting the artwork, product, orientation, size, delivery destination, and preferred DM channel.</p>
                         <ol class="process-steps">
-                            <li>Choose the artwork, product type, material, size, and frame.</li>
-                            <li>Send complete delivery details for an accurate final quote.</li>
-                            <li>After you approve the quote, we will send a PayPal payment link with the final total.</li>
-                            <li>Payment is confirmed and the order enters production.</li>
-                            <li>Tracking is shared after dispatch.</li>
+                            <li>Choose artwork and product.</li>
+                            <li>Select orientation and size.</li>
+                            <li>Add delivery destination.</li>
+                            <li>Review request.</li>
+                            <li>Continue through Instagram or Facebook Page DM.</li>
                         </ol>
-                        <a href="#request-modal" class="process-request-cta" data-request-trigger>Start a Request</a>
+                        <a href="#quote" class="process-request-cta">Start a Request</a>
                     </div>
-                    <div class="process-visual" aria-label="Instagram order flow preview">
+                    <div class="process-visual" aria-label="Desktop Instagram order flow preview">
                         <figure class="process-phone-stage">
                             <img
                                 src="assets/images/process-instagram-order-flow.png"
                                 alt="Instagram-style order flow showing the CicloBeef Studio purchase process from inquiry to payment confirmation and tracking"
                                 class="process-order-flow-image"
+                                width="941"
+                                height="1672"
+                                loading="lazy"
                             />
                         </figure>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="section landing-panel section-light" id="quote">
+            <div class="section-inner panel-inner">
+                <h2 class="section-title">Quote Request</h2>
+                <form class="quote-form" id="quoteForm" novalidate>
+                    <div class="quote-progress" aria-label="Quote request progress">
+                        <button type="button" class="quote-step-tab is-active" data-quote-step-tab="0" aria-current="step">Product</button>
+                        <button type="button" class="quote-step-tab" data-quote-step-tab="1">Delivery</button>
+                        <button type="button" class="quote-step-tab" data-quote-step-tab="2">Review</button>
+                    </div>
+
+                    <fieldset class="quote-step is-active" data-quote-step="0">
+                        <legend>Product</legend>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="quoteArtwork">Artwork or collection</label>
+                                <input id="quoteArtwork" name="artwork" type="text" required aria-describedby="quoteArtworkHint quoteArtworkError">
+                                <p id="quoteArtworkHint" class="field-hint">Use a collection name or a short artwork reference.</p>
+                                <p id="quoteArtworkError" class="field-error" aria-live="polite"></p>
+                            </div>
+                            <div class="form-field">
+                                <label for="quoteProduct">Product</label>
+                                <select id="quoteProduct" name="product" required aria-describedby="quoteProductError" data-product-select></select>
+                                <p id="quoteProductError" class="field-error" aria-live="polite"></p>
+                            </div>
+                            <div class="form-field">
+                                <label for="quoteOrientation">Orientation</label>
+                                <select id="quoteOrientation" name="orientation" required aria-describedby="quoteOrientationError" data-orientation-select></select>
+                                <p id="quoteOrientationError" class="field-error" aria-live="polite"></p>
+                            </div>
+                            <div class="form-field">
+                                <label for="quoteSize">Size</label>
+                                <select id="quoteSize" name="size" required aria-describedby="quoteSizeError" data-size-select></select>
+                                <p id="quoteSizeError" class="field-error" aria-live="polite"></p>
+                            </div>
+                            <div class="form-field">
+                                <label for="quoteQuantity">Quantity</label>
+                                <input id="quoteQuantity" name="quantity" type="number" min="1" step="1" required aria-describedby="quoteQuantityHint quoteQuantityError">
+                                <p id="quoteQuantityHint" class="field-hint">Minimum 1 item.</p>
+                                <p id="quoteQuantityError" class="field-error" aria-live="polite"></p>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="quote-step" data-quote-step="1" hidden>
+                        <legend>Delivery</legend>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="quoteCountry">Country</label>
+                                <input id="quoteCountry" name="country" type="text" required aria-describedby="quoteCountryError">
+                                <p id="quoteCountryError" class="field-error" aria-live="polite"></p>
+                            </div>
+                            <div class="form-field">
+                                <label for="quoteRegion">Region or state</label>
+                                <input id="quoteRegion" name="region" type="text" required aria-describedby="quoteRegionError">
+                                <p id="quoteRegionError" class="field-error" aria-live="polite"></p>
+                            </div>
+                            <div class="form-field">
+                                <label for="quoteCity">City</label>
+                                <input id="quoteCity" name="city" type="text" required aria-describedby="quoteCityError">
+                                <p id="quoteCityError" class="field-error" aria-live="polite"></p>
+                            </div>
+                            <div class="form-field">
+                                <label for="quotePostalCode">Postal code</label>
+                                <input id="quotePostalCode" name="postalCode" type="text" required aria-describedby="quotePostalCodeError">
+                                <p id="quotePostalCodeError" class="field-error" aria-live="polite"></p>
+                            </div>
+                            <div class="form-field form-field-wide">
+                                <label for="quoteAddress">Delivery address</label>
+                                <textarea id="quoteAddress" name="address" rows="3" required aria-describedby="quoteAddressError"></textarea>
+                                <p id="quoteAddressError" class="field-error" aria-live="polite"></p>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="quote-step" data-quote-step="2" hidden>
+                        <legend>Review</legend>
+                        <div class="quote-review" data-quote-review aria-live="polite"></div>
+                        <div class="form-field">
+                            <span class="field-label">DM channel</span>
+                            <div class="channel-options" role="radiogroup" aria-describedby="quoteChannelError">
+                                <label>
+                                    <input type="radio" name="channel" value="instagram" required>
+                                    Instagram DM
+                                </label>
+                                <label>
+                                    <input type="radio" name="channel" value="facebook" required>
+                                    Facebook Page DM
+                                </label>
+                            </div>
+                            <p id="quoteChannelError" class="field-error" aria-live="polite"></p>
+                        </div>
+                    </fieldset>
+
+                    <p class="quote-form-status" id="quoteFormStatus" aria-live="polite">Complete the required fields to continue.</p>
+
+                    <div class="quote-actions">
+                        <button type="button" class="quote-secondary" data-quote-prev disabled>Back</button>
+                        <button type="button" data-quote-next>Continue</button>
+                        <button type="submit" data-quote-submit hidden disabled>Continue to DM</button>
+                    </div>
+                </form>
             </div>
         </section>
 
@@ -205,7 +329,7 @@
                     <div class="brand-pillar-grid">
                         <article class="brand-pillar-card">
                             <h4>Editorial Depth</h4>
-                            <p>Artwork shaped around historical, social, and political memory.</p>
+                            <p>Artwork shaped around cultural memory, symbolism, and material context.</p>
                         </article>
                         <article class="brand-pillar-card">
                             <h4>Premium Visual Direction</h4>
@@ -233,7 +357,7 @@
                         Tell us your preferred collection, size, and delivery details, including destination address and postal code when applicable. We will send you a personalized quote before production.
                     </p>
                     <div class="social-buttons primary-social" aria-label="Contact CicloBeef Studio on social media">
-                        <a href="#request-modal" aria-label="Instagram" data-request-trigger><i class="fab fa-instagram"></i></a>
+                        <a href="https://ig.me/m/ciclobeefstudio" aria-label="Instagram DM"><i class="fab fa-instagram"></i></a>
                         <a href="https://facebook.com/ciclobeefstudio" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://linkedin.com/company/ciclobeefstudio" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
@@ -254,7 +378,7 @@
                         </details>
                         <details>
                             <summary>Cultural direction</summary>
-                            <p>Each piece is shaped around historical, social, or political meaning rather than generic decoration.</p>
+                            <p>Each piece is shaped around cultural memory, symbolism, or archival meaning rather than generic decoration.</p>
                         </details>
                     </div>
                     <div class="directory-column">
@@ -298,7 +422,7 @@
                     <div class="directory-column">
                         <h3>Contact</h3>
                         <p class="directory-note">Instagram DM and Facebook Page DM are the request channels for new artwork orders. LinkedIn is available for contracts and professional matters.</p>
-                        <a href="#request-modal" data-request-trigger>Instagram DM</a>
+                        <a href="https://ig.me/m/ciclobeefstudio">Instagram DM</a>
                         <a href="https://facebook.com/ciclobeefstudio">Facebook</a>
                         <a href="https://linkedin.com/company/ciclobeefstudio">LinkedIn</a>
                         <a href="mailto:ciclobeefstudio@gmail.com">Email</a>
@@ -334,18 +458,6 @@
             </div>
         </section>
     </main>
-
-    <div class="request-modal" id="requestModal" role="dialog" aria-modal="true" aria-labelledby="requestModalTitle" hidden>
-        <div class="request-modal__panel">
-            <div class="request-modal__accent" aria-hidden="true"></div>
-            <h2 id="requestModalTitle">Open Instagram DM?</h2>
-            <p>Do you want to open Instagram DM to request your artwork?</p>
-            <div class="request-modal__actions">
-                <button type="button" class="request-modal__primary" id="requestModalContinue">Continue to Instagram</button>
-                <button type="button" class="request-modal__secondary" id="requestModalCancel">Cancel</button>
-            </div>
-        </div>
-    </div>
 
 </body>
 </html>
