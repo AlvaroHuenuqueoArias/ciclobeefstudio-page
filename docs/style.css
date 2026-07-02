@@ -1484,7 +1484,7 @@ footer a:hover {
 
 #contact footer {
     width: 100%;
-    margin-top: 1.75rem;
+    margin-top: auto;
     margin-bottom: 0;
 }
 
@@ -1537,9 +1537,16 @@ footer a:hover {
     }
 
     #quote {
-        min-height: auto;
+        min-height: 100svh;
         padding-top: clamp(4rem, 5vw, 5rem);
         padding-bottom: clamp(4rem, 5vw, 5rem);
+    }
+
+    #quote .section-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: calc(100svh - clamp(8rem, 10vw, 10rem));
     }
 
     #quote .section-title {
@@ -1567,12 +1574,12 @@ footer a:hover {
     }
 
     #contact {
-        min-height: auto;
+        min-height: 100svh;
         padding-bottom: 0;
     }
 
     #contact .request-inner {
-        min-height: auto;
+        min-height: calc(100svh - clamp(4rem, 6.2vw, 6rem) * 2);
     }
 }
 
@@ -1839,6 +1846,7 @@ footer a:hover {
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.75rem;
+        margin-top: clamp(1.5rem, 6vw, 2.5rem);
         padding-right: max(1rem, env(safe-area-inset-right));
         padding-bottom: max(1rem, env(safe-area-inset-bottom));
         padding-left: max(1rem, env(safe-area-inset-left));
