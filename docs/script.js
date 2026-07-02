@@ -416,7 +416,7 @@ function initQuoteForm() {
 
 if (scrollBtn) {
     scrollBtn.addEventListener("click", () => {
-        scrollToSection(document.getElementById("products"));
+        scrollToSection(document.getElementById("gallery"));
     });
 }
 

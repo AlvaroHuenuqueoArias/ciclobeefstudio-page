@@ -38,6 +38,7 @@ body {
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: env(safe-area-inset-top);
 }
 
 body {
@@ -762,7 +763,7 @@ button:disabled {
     flex-direction: column;
     justify-content: center;
     min-height: calc(100svh - clamp(4rem, 6.2vw, 6rem) * 2);
-    padding-bottom: 0;
+    padding-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
 #products,
@@ -1484,7 +1485,7 @@ footer a:hover {
 #contact footer {
     width: 100%;
     margin-top: 1.75rem;
-    margin-bottom: calc(clamp(4rem, 6.2vw, 6rem) * -1);
+    margin-bottom: 0;
 }
 
 /* =========================
@@ -1546,7 +1547,32 @@ footer a:hover {
     }
 
     .quote-form {
-        width: min(100%, var(--content-max-width));
+        width: min(100%, 62rem);
+        padding: 1.25rem;
+    }
+
+    .quote-progress {
+        width: min(100%, 34rem);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .quote-step legend {
+        text-align: center;
+    }
+
+    .quote-actions {
+        align-items: center;
+        justify-content: center;
+    }
+
+    #contact {
+        min-height: auto;
+        padding-bottom: 0;
+    }
+
+    #contact .request-inner {
+        min-height: auto;
     }
 }
 
@@ -1806,6 +1832,20 @@ footer a:hover {
     .quote-actions {
         display: grid;
         grid-template-columns: 1fr;
+    }
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        padding-right: max(1rem, env(safe-area-inset-right));
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+        padding-left: max(1rem, env(safe-area-inset-left));
+    }
+
+    footer a {
+        margin-left: 0;
     }
 }
 
