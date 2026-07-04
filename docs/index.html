@@ -189,110 +189,25 @@
 
         <section class="section landing-panel section-light" id="quote">
             <div class="section-inner panel-inner">
-                <h2 class="section-title">Quote Request</h2>
-                <form class="quote-form" id="quoteForm" novalidate>
-                    <div class="quote-progress" aria-label="Quote request progress">
-                        <button type="button" class="quote-step-tab is-active" data-quote-step-tab="0" aria-current="step">Product</button>
-                        <button type="button" class="quote-step-tab" data-quote-step-tab="1">Delivery</button>
-                        <button type="button" class="quote-step-tab" data-quote-step-tab="2">Review</button>
+                <div class="quote-direct" aria-labelledby="quoteDirectTitle">
+                    <h2 class="section-title" id="quoteDirectTitle">Request a Personalized Quote</h2>
+                    <p class="quote-direct-copy">
+                        Choose your preferred channel to begin your quotation request.
+                        Our team will guide you through artwork, product, orientation,
+                        size, delivery destination, and final pricing.
+                    </p>
+                    <div class="quote-direct-actions" aria-label="Choose a quotation channel">
+                        <a class="quote-direct-link quote-direct-primary" href="https://ig.me/m/ciclobeefstudio" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>Instagram DM</span>
+                        </a>
+                        <a class="quote-direct-link" href="https://m.me/ciclobeefstudio" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-messenger" aria-hidden="true"></i>
+                            <span>Facebook Messenger</span>
+                        </a>
                     </div>
-
-                    <fieldset class="quote-step is-active" data-quote-step="0">
-                        <legend>Product</legend>
-                        <div class="form-grid">
-                            <div class="form-field">
-                                <label for="quoteArtwork">Artwork or collection</label>
-                                <input id="quoteArtwork" name="artwork" type="text" required aria-describedby="quoteArtworkHint quoteArtworkError">
-                                <p id="quoteArtworkHint" class="field-hint">Use a collection name or a short artwork reference.</p>
-                                <p id="quoteArtworkError" class="field-error" aria-live="polite"></p>
-                            </div>
-                            <div class="form-field">
-                                <label for="quoteProduct">Product</label>
-                                <select id="quoteProduct" name="product" required aria-describedby="quoteProductError" data-product-select></select>
-                                <p id="quoteProductError" class="field-error" aria-live="polite"></p>
-                            </div>
-                            <div class="form-field">
-                                <label for="quoteOrientation">Orientation</label>
-                                <select id="quoteOrientation" name="orientation" required aria-describedby="quoteOrientationError" data-orientation-select></select>
-                                <p id="quoteOrientationError" class="field-error" aria-live="polite"></p>
-                            </div>
-                            <div class="form-field">
-                                <label for="quoteSize">Size</label>
-                                <select id="quoteSize" name="size" required aria-describedby="quoteSizeError" data-size-select></select>
-                                <p id="quoteSizeError" class="field-error" aria-live="polite"></p>
-                            </div>
-                            <div class="form-field">
-                                <label for="quoteQuantity">Quantity</label>
-                                <input id="quoteQuantity" name="quantity" type="number" min="1" step="1" required aria-describedby="quoteQuantityHint quoteQuantityError">
-                                <p id="quoteQuantityHint" class="field-hint">Minimum 1 item.</p>
-                                <p id="quoteQuantityError" class="field-error" aria-live="polite"></p>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="quote-step" data-quote-step="1" hidden>
-                        <legend>Delivery</legend>
-                        <div class="form-grid">
-                            <div class="form-field">
-                                <label for="quoteCountry">Country</label>
-                                <input id="quoteCountry" name="country" type="text" required aria-describedby="quoteCountryError">
-                                <p id="quoteCountryError" class="field-error" aria-live="polite"></p>
-                            </div>
-                            <div class="form-field">
-                                <label for="quoteRegion">Region or state</label>
-                                <input id="quoteRegion" name="region" type="text" required aria-describedby="quoteRegionError">
-                                <p id="quoteRegionError" class="field-error" aria-live="polite"></p>
-                            </div>
-                            <div class="form-field">
-                                <label for="quoteCity">City</label>
-                                <input id="quoteCity" name="city" type="text" required aria-describedby="quoteCityError">
-                                <p id="quoteCityError" class="field-error" aria-live="polite"></p>
-                            </div>
-                            <div class="form-field">
-                                <label for="quotePostalCode">Postal code</label>
-                                <input id="quotePostalCode" name="postalCode" type="text" required aria-describedby="quotePostalCodeError">
-                                <p id="quotePostalCodeError" class="field-error" aria-live="polite"></p>
-                            </div>
-                            <div class="form-field">
-                                <label for="quoteEmail">Email</label>
-                                <input id="quoteEmail" name="email" type="email" required aria-describedby="quoteEmailError">
-                                <p id="quoteEmailError" class="field-error" aria-live="polite"></p>
-                            </div>
-                            <div class="form-field">
-                                <label for="quoteAddress">Delivery address</label>
-                                <textarea id="quoteAddress" name="address" rows="2" required aria-describedby="quoteAddressError"></textarea>
-                                <p id="quoteAddressError" class="field-error" aria-live="polite"></p>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="quote-step" data-quote-step="2" hidden>
-                        <legend>Review</legend>
-                        <div class="quote-review" data-quote-review aria-live="polite"></div>
-                        <div class="form-field">
-                            <span class="field-label">DM channel</span>
-                            <div class="channel-options" role="radiogroup" aria-describedby="quoteChannelError">
-                                <label>
-                                    <input type="radio" name="channel" value="instagram" required>
-                                    Instagram DM
-                                </label>
-                                <label>
-                                    <input type="radio" name="channel" value="facebook" required>
-                                    Facebook Page DM
-                                </label>
-                            </div>
-                            <p id="quoteChannelError" class="field-error" aria-live="polite"></p>
-                        </div>
-                    </fieldset>
-
-                    <p class="quote-form-status" id="quoteFormStatus" aria-live="polite">Complete the required fields to continue.</p>
-
-                    <div class="quote-actions">
-                        <button type="button" class="quote-secondary" data-quote-prev disabled>Back</button>
-                        <button type="button" data-quote-next>Continue</button>
-                        <button type="submit" data-quote-submit hidden disabled>Continue to DM</button>
-                    </div>
-                </form>
+                    <p class="quote-direct-note">You will continue the quotation directly with the CicloBeef Studio team.</p>
+                </div>
             </div>
         </section>
 
