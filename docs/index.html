@@ -69,21 +69,7 @@
         <section class="section landing-panel section-light" id="products">
             <div class="section-inner panel-inner">
                 <h2 class="section-title">Collections That Start Conversations</h2>
-                <p class="section-kicker">Choose an editorial direction, then select the physical product, orientation, and size.</p>
-                <div class="product-system" aria-label="Official product options">
-                    <section class="product-group" aria-labelledby="productOptionsTitle">
-                        <h3 id="productOptionsTitle">Product</h3>
-                        <div class="option-grid" data-catalog-products></div>
-                    </section>
-                    <section class="product-group" aria-labelledby="orientationOptionsTitle">
-                        <h3 id="orientationOptionsTitle">Orientation</h3>
-                        <div class="option-grid compact" data-catalog-orientations></div>
-                    </section>
-                    <section class="product-group" aria-labelledby="sizeOptionsTitle">
-                        <h3 id="sizeOptionsTitle">Size</h3>
-                        <div class="option-grid" data-catalog-sizes></div>
-                    </section>
-                </div>
+                <p class="section-kicker">Explore editorial directions for premium framed posters and acrylic prints, prepared in vertical or horizontal formats and official large-format sizes by quote.</p>
                 <div class="cards-grid editorial-grid" aria-label="Editorial collection directions">
                     <article class="collection-card">
                         <div class="placeholder-art" aria-hidden="true">
@@ -179,6 +165,12 @@
                         </ol>
                         <a href="#quote" class="process-request-cta">Start a Request</a>
                     </div>
+                    <div class="process-chat" aria-label="Quote request conversation preview">
+                        <div class="process-chat-bubble process-chat-bubble-client" data-speaker="Client">Hi, I want a Premium Wooden Frame poster.</div>
+                        <div class="process-chat-bubble process-chat-bubble-studio" data-speaker="CicloBeef Studio">Great. Send artwork, orientation, size, quantity, and delivery city.</div>
+                        <div class="process-chat-bubble process-chat-bubble-client" data-speaker="Client">Vertical, 60×90 cm, one unit, delivery to Santiago.</div>
+                        <div class="process-chat-bubble process-chat-bubble-studio" data-speaker="CicloBeef Studio">We review production, shipping, taxes, and send your PayPal payment link.</div>
+                    </div>
                     <div class="process-visual" aria-label="Desktop Instagram order flow preview">
                         <figure class="process-phone-stage">
                             <img
@@ -261,9 +253,14 @@
                                 <input id="quotePostalCode" name="postalCode" type="text" required aria-describedby="quotePostalCodeError">
                                 <p id="quotePostalCodeError" class="field-error" aria-live="polite"></p>
                             </div>
-                            <div class="form-field form-field-wide">
+                            <div class="form-field">
+                                <label for="quoteEmail">Email</label>
+                                <input id="quoteEmail" name="email" type="email" required aria-describedby="quoteEmailError">
+                                <p id="quoteEmailError" class="field-error" aria-live="polite"></p>
+                            </div>
+                            <div class="form-field">
                                 <label for="quoteAddress">Delivery address</label>
-                                <textarea id="quoteAddress" name="address" rows="3" required aria-describedby="quoteAddressError"></textarea>
+                                <textarea id="quoteAddress" name="address" rows="2" required aria-describedby="quoteAddressError"></textarea>
                                 <p id="quoteAddressError" class="field-error" aria-live="polite"></p>
                             </div>
                         </div>

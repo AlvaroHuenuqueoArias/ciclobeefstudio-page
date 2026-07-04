@@ -265,6 +265,8 @@ function initQuoteForm() {
         let message = "";
         if (field.validity.valueMissing) {
             message = "This field is required.";
+        } else if (field.validity.typeMismatch) {
+            message = "Enter a valid email address.";
         } else if (field.validity.rangeUnderflow) {
             message = "Use a value of 1 or more.";
         }
@@ -310,6 +312,7 @@ function initQuoteForm() {
             ["Region or state", data.get("region")],
             ["City", data.get("city")],
             ["Postal code", data.get("postalCode")],
+            ["Email", data.get("email")],
             ["Delivery address", data.get("address")],
         ];
 
