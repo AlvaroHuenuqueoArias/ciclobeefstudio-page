@@ -15,7 +15,7 @@ Depending on the request, quote or contact channel, we may collect:
 - Name and surname.
 - Email address and phone number, when provided or required for the order.
 - Country, region, city, postal code and shipping address.
-- Message content, artwork request, product type, size, orientation, quantity and quote details.
+- Message content, artwork request, studio edition type, size, orientation, quantity and quote details.
 - Order information, payment status, delivery status and tracking information.
 - Communications sent by Instagram DM, Facebook Page DM, LinkedIn, email or other listed contact channels.
 
@@ -28,11 +28,11 @@ We do **not** intentionally collect sensitive personal data through our public w
 We may use the information you provide to:
 
 - Respond to inquiries, messages and collaboration proposals.
-- Prepare personalized quotes based on product, format, destination, shipping and applicable order conditions.
+- Prepare personalized quotes based on studio edition, format, destination, shipping and applicable order conditions.
 - Confirm orders and PayPal payment status.
-- Produce, print, fulfill and dispatch made-to-order products.
+- Produce, print, fulfill and dispatch made-to-order studio editions.
 - Provide delivery updates, tracking information and customer support.
-- Investigate order issues, damaged products, missing items or delivery problems.
+- Investigate order issues, damaged studio editions, missing items or delivery problems.
 - Maintain legitimate commercial, accounting and support records.
 
 CicloBeef Studio uses internal records and operational tools to manage inventory, quotes and sales history. We do not publish internal spreadsheet names, formulas or system architecture in public documentation.
@@ -47,7 +47,7 @@ Only the data strictly necessary for an order or request may be shared with exte
 
 This may include:
 
-- Gelato and its print, production and fulfillment network, when needed to produce and deliver an order.
+- External print, production and fulfillment providers, when needed to produce and deliver an order.
 - Shipping carriers and logistics providers, when needed for delivery and tracking.
 - Communication, storage, form and email providers, when those services are used for a specific request or order.
 - PayPal, when a customer approves a quote and receives a payment link for the final order total.
