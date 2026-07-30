@@ -1,16 +1,16 @@
 const CATALOG = {
     products: [
-        "Premium Wooden Frame posters",
-        "Acrylic print",
+        "CicloBeef Signature Frame",
+        "CicloBeef Signature Acrylic",
     ],
     orientations: [
         "Vertical",
         "Horizontal",
     ],
     sizes: [
-        "50×70 cm / 20×28″",
-        "60×90 cm / 24×36″",
-        "70×100 cm / 28×40″",
+        "50 × 70 cm / 20 × 28\"",
+        "60 × 90 cm / 24 × 36\"",
+        "70 × 100 cm / 28 × 40\"",
     ],
 };
 
@@ -18,6 +18,7 @@ const scrollBtn = document.getElementById("scrollBtn");
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
 const focusableSelector = "a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex='-1'])";
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 let lastNavFocus = null;
 
@@ -159,7 +160,7 @@ function renderFormats() {
             <article class="format-card" tabindex="0" aria-label="Official size ${size}">
                 <h3>Official Size</h3>
                 <p>${size}</p>
-                <span>Available for official products and orientations by quote.</span>
+                <span>Available for official studio editions and orientations by quote.</span>
             </article>
         `).join("");
     }
@@ -170,49 +171,194 @@ function initGallery() {
     const track = document.querySelector("[data-gallery-track]");
     const prevButton = document.querySelector("[data-gallery-prev]");
     const nextButton = document.querySelector("[data-gallery-next]");
-    const dotsContainer = document.querySelector("[data-gallery-dots]");
 
-    if (!slider || !track || !prevButton || !nextButton || !dotsContainer) {
+    if (!slider || !track || !prevButton || !nextButton) {
         return;
     }
 
     const slides = Array.from(track.children);
     let activeIndex = 0;
 
-    dotsContainer.innerHTML = slides.map((_, index) => `
-        <button type="button" class="gallery-dot${index === 0 ? " is-active" : ""}" aria-label="Go to gallery item ${index + 1}" aria-pressed="${index === 0 ? "true" : "false"}"></button>
-    `).join("");
-
-    const dots = Array.from(dotsContainer.querySelectorAll(".gallery-dot"));
-
     function updateGallery(index) {
+        if (!slides.length) {
+            return;
+        }
+
         activeIndex = (index + slides.length) % slides.length;
-        slides[activeIndex].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-        dots.forEach((dot, dotIndex) => {
-            const isActive = dotIndex === activeIndex;
-            dot.classList.toggle("is-active", isActive);
-            dot.setAttribute("aria-pressed", String(isActive));
+        track.scrollTo({
+            left: slides[activeIndex].offsetLeft - track.offsetLeft,
+            behavior: reducedMotionQuery.matches ? "auto" : "smooth",
         });
     }
 
     prevButton.addEventListener("click", () => updateGallery(activeIndex - 1));
     nextButton.addEventListener("click", () => updateGallery(activeIndex + 1));
-    dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => updateGallery(index));
-    });
 
     track.addEventListener("scroll", () => {
+        if (!slides.length) {
+            return;
+        }
+
         const slideWidth = slides[0].getBoundingClientRect().width || 1;
         const nextIndex = Math.round(track.scrollLeft / slideWidth);
         if (nextIndex !== activeIndex && nextIndex >= 0 && nextIndex < slides.length) {
             activeIndex = nextIndex;
-            dots.forEach((dot, dotIndex) => {
-                const isActive = dotIndex === activeIndex;
-                dot.classList.toggle("is-active", isActive);
-                dot.setAttribute("aria-pressed", String(isActive));
-            });
         }
     }, { passive: true });
+}
+
+function initHeroArtworkReflection() {
+    const reflection = document.querySelector(".hero-artwork-reflection");
+    const hero = document.getElementById("hero");
+
+    if (!reflection || !hero || reducedMotionQuery.matches || !window.gsap) {
+        return;
+    }
+
+    let reflectionTimer = null;
+    let activeReflection = null;
+
+    function playReflection() {
+        if (activeReflection && activeReflection.isActive()) {
+            return;
+        }
+
+        window.gsap.set(reflection, { autoAlpha: 0, "--hero-reflection-x": "-118%" });
+        activeReflection = window.gsap.timeline({
+            defaults: { ease: "sine.inOut" },
+            onComplete: () => {
+                activeReflection = null;
+            },
+        });
+
+        activeReflection
+            .to(reflection, { autoAlpha: 0.34, "--hero-reflection-x": "118%", duration: 2.75 })
+            .to(reflection, { autoAlpha: 0, duration: 0.46, ease: "power1.out" });
+    }
+
+    function stopReflection() {
+        if (reflectionTimer) {
+            window.clearInterval(reflectionTimer);
+            reflectionTimer = null;
+        }
+
+        if (activeReflection) {
+            activeReflection.kill();
+            activeReflection = null;
+        }
+
+        window.gsap.set(reflection, { autoAlpha: 0, "--hero-reflection-x": "-118%" });
+    }
+
+    if (!("IntersectionObserver" in window)) {
+        playReflection();
+        reflectionTimer = window.setInterval(playReflection, 8000);
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        const isHeroVisible = entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= 0.45);
+
+        if (!isHeroVisible) {
+            stopReflection();
+            return;
+        }
+
+        playReflection();
+
+        if (!reflectionTimer) {
+            reflectionTimer = window.setInterval(playReflection, 8000);
+        }
+    }, { threshold: [0, 0.45, 0.7] });
+
+    observer.observe(hero);
+}
+
+function initCol001ScrollReveal() {
+    if (!window.gsap || !window.ScrollTrigger || reducedMotionQuery.matches) {
+        return;
+    }
+
+    window.gsap.registerPlugin(window.ScrollTrigger);
+    window.gsap.fromTo("[data-gallery-item]", {
+        autoAlpha: 0,
+        y: 22,
+    }, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.58,
+        stagger: 0.07,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: "#gallery",
+            start: "top 72%",
+            once: true,
+        },
+    });
+}
+
+function initProductBrowsers() {
+    document.querySelectorAll("[data-product-browser]").forEach(browser => {
+        const mainImage = browser.querySelector("[data-product-main-image]");
+        const mainLabel = browser.querySelector("[data-product-main-label]");
+        const options = Array.from(browser.querySelectorAll("[data-product-option]"));
+        let switchTimer = null;
+
+        if (!mainImage || !mainLabel || !options.length) {
+            return;
+        }
+
+        function selectOption(option, { focus = false } = {}) {
+            const nextImage = option.dataset.image;
+            const nextAlt = option.dataset.alt || "";
+            const nextLabel = option.dataset.label || "";
+
+            if (!nextImage) {
+                return;
+            }
+
+            options.forEach(item => {
+                const isSelected = item === option;
+                item.classList.toggle("is-selected", isSelected);
+                item.setAttribute("aria-pressed", isSelected ? "true" : "false");
+            });
+
+            if (switchTimer) {
+                window.clearTimeout(switchTimer);
+            }
+
+            browser.classList.add("is-switching");
+            switchTimer = window.setTimeout(() => {
+                mainImage.src = nextImage;
+                mainImage.alt = nextAlt;
+                mainLabel.textContent = nextLabel;
+                browser.classList.remove("is-switching");
+                switchTimer = null;
+            }, reducedMotionQuery.matches ? 0 : 120);
+
+            if (focus) {
+                option.focus();
+            }
+        }
+
+        options.forEach((option, index) => {
+            option.addEventListener("click", () => selectOption(option));
+            option.addEventListener("keydown", event => {
+                const isForward = event.key === "ArrowRight" || event.key === "ArrowDown";
+                const isBackward = event.key === "ArrowLeft" || event.key === "ArrowUp";
+
+                if (!isForward && !isBackward) {
+                    return;
+                }
+
+                event.preventDefault();
+                const nextIndex = isForward
+                    ? (index + 1) % options.length
+                    : (index - 1 + options.length) % options.length;
+                selectOption(options[nextIndex], { focus: true });
+            });
+        });
+    });
 }
 
 if (scrollBtn) {
@@ -256,3 +402,6 @@ renderCatalogList("[data-catalog-orientations]", CATALOG.orientations);
 renderCatalogList("[data-catalog-sizes]", CATALOG.sizes);
 renderFormats();
 initGallery();
+initHeroArtworkReflection();
+initCol001ScrollReveal();
+initProductBrowsers();
