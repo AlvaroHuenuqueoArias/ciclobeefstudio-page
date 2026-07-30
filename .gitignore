@@ -22,6 +22,8 @@ mkdocs.yml.bak
 .DS_Store
 Thumbs.db
 
+# Node local dependencies
+node_modules/
+
 # OS / misc
 *.log
-E0F
