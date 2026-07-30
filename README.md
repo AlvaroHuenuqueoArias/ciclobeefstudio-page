@@ -1,140 +1,157 @@
-# CicloBeef Studio – Technical Documentation Repository
+# CicloBeef Studio
 
-**CicloBeef Studio** is an international project dedicated to the creation and distribution of high-end artistic prints inspired by history, politics, and society. This repository hosts the technical documentation site for the studio, built using **MkDocs + Material** and deployed to **GitHub Pages** under a fully-automated **GitFlow + CI/CD** workflow.
+**Transforming Culture**
 
-The website is designed as a foundational entry point into the broader CicloBeef Studio platform, which integrates automation tools (Google Apps Script, PayPal, Meta Graph API, and n8n) to deliver a seamless and automated e-commerce experience.
+CicloBeef Studio is a digital art and premium wall-art studio exploring history, society & culture through curated visual collections.
 
----
+## Production Website
 
-## 📅 Project Timeline & Releases
+https://ciclobeefstudio.com/
 
-| Version | Date       | Description                                                                 |
-| ------- | ---------- | --------------------------------------------------------------------------- |
-| v0.1.0  | 2025-11-02 | Initial release with structure, base theme, and working CI pipeline         |
-| v0.2.0  | 2025-11-20 | Migrated to tag-based deployment and improved workflow integration          |
-| v0.3.0  | 2025-11-28 | First major branding implementation with dark UI and structured pages       |
-| v0.3.1  | 2025-11-27 | Hotfix to remove broken links and disable AWS CI pending setup              |
-| v0.4.0  | 2025-12-02 | Final 2025 branding release and corporate UI consolidation                  |
-| v0.5.0  | 2026-02   | Fullscreen landing, conversational UX, and automation-ready layout           |
+## Release
 
----
+Target hotfix release: `v0.6.1`
 
-## Version 0.5.1
+## Commercial Model
 
-This hotfix resolves a production issue where the site root briefly rendered
-documentation content before redirecting to the landing page.
+CicloBeef Studio currently operates through a curated quotation workflow rather than an automated public checkout.
 
-### Changes
-- Serve landing page directly at `/`
-- Remove redirect-based home behavior
-- Preserve documentation under a dedicated entry
+- Studio Editions
+- CicloBeef Signature Frame
+- CicloBeef Signature Acrylic
+- Collection 001
+- Vertical and horizontal formats
+- Worldwide quotation workflow
+- Ordering through official social channels
 
----
+## Product Sizes
 
-## 🔧 Project Goals
+- 50 × 70 cm / 20 × 28 in
+- 60 × 90 cm / 24 × 36 in
+- 70 × 100 cm / 28 × 40 in
 
-* Provide a professional and scalable documentation platform
-* Act as the landing page for CicloBeef Studio's automation ecosystem
-* Support validation and integration with **Meta Developer API**
-* Demonstrate DevOps proficiency through real versioning and CI/CD workflows
+## Technology Stack
 
----
+The repository currently uses the following technologies:
 
-## 🧰 Stack Overview
+- HTML
+- CSS
+- Vanilla JavaScript
+- MkDocs
+- Material for MkDocs
+- GSAP
+- ScrollTrigger
+- Sharp
+- Node.js
+- npm
+- Git
+- GitHub
+- GitHub Actions
+- GitHub Pages
 
-| Category          | Tools/Technologies                                |
-| ----------------- | ------------------------------------------------- |
-| Documentation     | Python, MkDocs, Material for MkDocs               |
-| Versioning        | Git, GitFlow, GitHub                              |
-| CI/CD             | GitHub Actions, Deploy via tag to `gh-pages`      |
-| Automation        | Google Apps Script, PayPal, n8n                   |
-| Frontend Assets   | Custom CSS (`extra.css`), JS (`custom.js`)        |
-| Design & Branding | Canva (banners, logos), WhiteWall (print backend) |
-| Security          | KeePassXC, GitHub secrets                         |
+## Repository Structure
 
----
+- `docs/` - Public site source, documentation pages, scripts, styles and production assets.
+- `docs/assets/` - Images, social preview assets, CSS extras and JavaScript assets used by the site.
+- `docs/integrations/` - Integration documentation currently included in MkDocs navigation.
+- `docs/business/`, `docs/technical/`, `docs/audits/`, `docs/ai-log/` - Project documentation and audit records.
+- `.github/workflows/` - GitHub Actions workflows for PR validation and manual GitHub Pages deployment.
+- `scripts/` - Node.js asset pipeline scripts.
+- `overrides/` - MkDocs theme override files.
+- `assets-source/` - Source asset workspace used by the local asset pipeline.
+- `mkdocs.yml` - MkDocs site configuration.
+- `requirements.txt` - Python dependencies used by CI and local MkDocs builds.
+- `package.json` - npm scripts and frontend asset dependencies.
 
-## 📖 Getting Started
+## Local Setup
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/AlvaroHuenuqueoArias/ciclobeefstudio-page.git
-cd ciclobeefstudio-page
-```
-
-### 2. Create and Activate Virtual Environment
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### 3. Install Dependencies
+Install Node.js dependencies:
 
 ```bash
-pip install mkdocs mkdocs-material mkdocs-macros-plugin
+npm ci
 ```
 
-### 4. Run Locally
+Install Python dependencies in a virtual environment:
 
 ```bash
-mkdocs serve
+python3.11 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
 ```
 
-Then visit:
-
-```
-http://127.0.0.1:8000
-```
-
-### 5. Deploy Manually
-
-Build and deploy the site:
+Build the MkDocs site:
 
 ```bash
-mkdocs gh-deploy --force
+.venv/bin/python -m mkdocs build --strict
 ```
 
-> Note: Only run this command from the `main` branch with a proper tag.
+Serve the MkDocs site locally:
 
----
-
-## 🌐 Live Deployment
-
-The documentation site is published automatically to:
-
-```
-https://alvarohuenuqueoarias.github.io/ciclobeefstudio-page/
+```bash
+.venv/bin/python -m mkdocs serve
 ```
 
-Every deploy is tracked through GitHub Actions and tied to specific version tags.
+## Frontend Asset Pipeline
 
----
+The npm scripts currently defined in `package.json` are:
 
-## 🌎 Business Context
+```bash
+npm run vendor:sync
+npm run assets:build
+npm run build:frontend-assets
+```
 
-The CicloBeef Studio platform integrates:
+`npm run build:frontend-assets` runs the vendor synchronization script and then rebuilds Collection 001 frontend assets.
 
-* Professional presentation (logo, branding, typography)
-* Automated responses in social media via DM (future via LangGraph + LangChain)
-* Automated quotation system (manual for now, pending RPA)
-* Integration with Google Forms + Sheets + Apps Script
-* Smart delivery of post-purchase PDFs
+## Validation
 
-This site serves as a **technical validation point** and onboarding portal for automation workflows.
+Pull request validation installs `requirements.txt` and runs the strict MkDocs build used by CI:
 
----
+```bash
+python -m mkdocs build --strict
+```
 
-## ✉️ Contact
+Local release validation should also run:
 
-For business or technical inquiries:
+```bash
+npm ci
+npm run build:frontend-assets
+.venv/bin/python -m mkdocs build --strict
+```
 
-**Email**: [ciclobeefstudio@gmail.com](mailto:ciclobeefstudio@gmail.com)
-**GitHub**: [@AlvaroHuenuqueoArias](https://github.com/AlvaroHuenuqueoArias)
+## GitFlow
 
----
+- `main` contains production release history.
+- `develop` contains integrated work prepared for the next release cycle.
+- `feature/*` branches are used for isolated feature work.
+- `release/*` branches prepare versioned production releases.
+- `hotfix/*` branches are created from `main` for controlled production corrections and then synchronized back into `develop`.
 
-## 📃 License
+## Deployment
 
-All content is the intellectual property of CicloBeef Studio. Reproduction or commercial reuse is not allowed without express permission.
+Production deployments are manual and tag-based through GitHub Actions.
+
+The deployment workflow uses the `release_tag` input and checks out:
+
+```text
+refs/tags/${{ inputs.release_tag }}
+```
+
+The generated MkDocs output is published to GitHub Pages through the `gh-pages` branch.
+
+## Custom Domain
+
+Production uses:
+
+```text
+ciclobeefstudio.com
+```
+
+The GitHub Pages deployment workflow preserves this custom domain by writing the Pages `CNAME` during deployment.
+
+## Status
+
+Active production project.
+
+## Maintainer
+
+CicloBeef Studio.

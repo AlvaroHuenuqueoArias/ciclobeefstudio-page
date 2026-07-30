@@ -2727,6 +2727,11 @@ footer a:hover {
         display: block;
     }
 
+    #products .section-kicker,
+    #gallery .section-kicker {
+        display: none;
+    }
+
     #products .cards-grid {
         grid-template-columns: none;
         gap: 0.9rem;
@@ -2864,27 +2869,35 @@ footer a:hover {
     }
 
     #formats .format-card {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 0.08rem;
-        padding: 0.38rem 0.32rem;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 0.06rem 0.46rem;
+        align-items: center;
+        min-width: 0;
+        padding: 0.42rem 0.38rem;
         text-align: left;
     }
 
     .format-diagram {
-        display: none;
+        display: inline-flex;
+        width: clamp(1.1rem, 6vw, 1.55rem);
+        grid-row: 1 / 3;
+        grid-column: 1;
+        justify-self: center;
     }
 
     .format-card h4,
     #formats .format-card p {
-        grid-column: 1;
+        grid-column: 2;
+        min-width: 0;
     }
 
     .format-card h4 {
-        font-size: clamp(0.74rem, 3.4vw, 0.86rem);
+        font-size: clamp(0.68rem, 2.9vw, 0.8rem);
+        overflow-wrap: anywhere;
     }
 
     #formats .format-card p {
-        font-size: clamp(0.64rem, 2.8vw, 0.74rem);
+        font-size: clamp(0.56rem, 2.5vw, 0.68rem);
         white-space: normal;
     }
 
@@ -3192,6 +3205,37 @@ footer a:hover {
         line-height: 1.18;
         text-align: center;
     }
+
+    #scrollBtn {
+        position: relative;
+        isolation: isolate;
+        overflow: visible;
+        transform: translateY(-0.38rem);
+    }
+
+    #scrollBtn::before {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        z-index: -1;
+        border-radius: inherit;
+        background:
+            conic-gradient(from 0deg, rgba(255, 195, 0, 0.08), rgba(255, 195, 0, 0.42), rgba(138, 101, 0, 0.24), rgba(255, 195, 0, 0.08));
+        opacity: 0.72;
+        filter: blur(7px);
+        pointer-events: none;
+        animation: mobileCtaGoldHalo 6.8s linear infinite;
+    }
+
+    #scrollBtn:hover {
+        transform: translateY(-0.38rem) scale(1.04);
+    }
+
+    @keyframes mobileCtaGoldHalo {
+        to {
+            transform: rotate(360deg);
+        }
+    }
 }
 
 @media (max-width: 430px) {
@@ -3210,7 +3254,7 @@ footer a:hover {
     }
 
     .nav-logo-img {
-        width: 144px;
+        width: 156px;
         max-width: 42vw;
     }
 
@@ -3263,12 +3307,7 @@ footer a:hover {
     }
 
     #products .section-kicker {
-        display: -webkit-box;
-        overflow: hidden;
-        font-size: 0.72rem;
-        line-height: 1.25;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+        display: none;
     }
 
     .product-section-footer {
@@ -3335,7 +3374,7 @@ footer a:hover {
     }
 
     #formats .format-card {
-        padding: 0.32rem 0.3rem;
+        padding: 0.36rem 0.32rem;
     }
 
     #formats .format-card p {
@@ -3375,7 +3414,7 @@ footer a:hover {
 
 @media (max-width: 375px) {
     .nav-logo-img {
-        width: 136px;
+        width: 148px;
         max-width: 42vw;
     }
 
@@ -3387,6 +3426,14 @@ footer a:hover {
     .primary-social a {
         width: 2.75rem;
         height: 2.75rem;
+    }
+}
+
+@media (max-width: 560px) and (prefers-reduced-motion: reduce) {
+    #scrollBtn::before {
+        animation: none;
+        opacity: 0.58;
+        transform: none;
     }
 }
 
