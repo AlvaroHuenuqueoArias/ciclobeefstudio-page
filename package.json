@@ -1,0 +1,32 @@
+{
+  "name": "ciclobeefstudio-page",
+  "version": "1.0.0",
+  "description": "**CicloBeef Studio** is an international project dedicated to the creation and distribution of high-end artistic prints inspired by history, politics, and society. This repository hosts the technical documentation site for the studio, built using **MkDocs + Material** and deployed to **GitHub Pages** under a fully-automated **GitFlow + CI/CD** workflow.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "vendor:sync": "node scripts/sync-vendor-assets.mjs",
+    "assets:build": "node scripts/build-col001-assets.mjs",
+    "build:frontend-assets": "npm run vendor:sync && npm run assets:build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlvaroHuenuqueoArias/ciclobeefstudio-page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AlvaroHuenuqueoArias/ciclobeefstudio-page/issues"
+  },
+  "homepage": "https://github.com/AlvaroHuenuqueoArias/ciclobeefstudio-page#readme",
+  "dependencies": {
+    "gsap": "^3.15.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
+  }
+}
