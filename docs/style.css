@@ -2902,6 +2902,32 @@ footer a:hover {
 }
 
 @media (max-width: 560px) {
+    .hero-copy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: min(100%, 31rem);
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .overlay h1,
+    .overlay p {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .overlay h1::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        width: 100%;
+    }
+
     .trust-grid {
         grid-template-columns: 1fr;
     }
