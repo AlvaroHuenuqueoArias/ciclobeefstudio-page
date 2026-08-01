@@ -19,6 +19,7 @@
     --canva-wall-layer-mobile: url("assets/images/hero-premium-wall-mobile.png");
     --artwork-clarity-filter: brightness(1.04) contrast(1.12) saturate(1.16);
     --artwork-clarity-filter-hero: brightness(1.07) contrast(1.14) saturate(1.18);
+    --hero-glass-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 1080'%3E%3Cpath fill='white' d='M146 120 L671 164 L671 904 L149 945 Z M778 160 L1291 121 L1292 945 L778 906 Z'/%3E%3C/svg%3E");
     --cream: #f4eddc;
     --cream-soft: #fff8ed;
     --graphite: #232323;
@@ -255,8 +256,8 @@ a {
     overflow: hidden;
     pointer-events: none;
     mix-blend-mode: screen;
-    -webkit-mask-image: url("assets/images/HeroAtworks.png");
-    mask-image: url("assets/images/HeroAtworks.png");
+    -webkit-mask-image: var(--hero-glass-mask);
+    mask-image: var(--hero-glass-mask);
     -webkit-mask-size: contain;
     mask-size: contain;
     -webkit-mask-position: center;
