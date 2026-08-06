@@ -706,10 +706,10 @@ button:disabled {
 
 .col001-gallery-card figure {
     display: grid;
-    grid-template-rows: minmax(0, 1fr) auto;
+    grid-template-rows: minmax(0, 1fr) minmax(3.85rem, auto);
     align-items: center;
     justify-items: center;
-    gap: 0;
+    gap: 0.28rem;
     margin: 0;
     height: 100%;
     width: min(100%, 52rem);
@@ -721,7 +721,7 @@ button:disabled {
     width: auto;
     max-width: 100%;
     height: auto;
-    max-height: clamp(18rem, 58vh, 35rem);
+    max-height: clamp(16rem, 51vh, 31rem);
     margin: 0 auto;
     border-radius: 0;
     object-fit: contain;
@@ -732,34 +732,53 @@ button:disabled {
 
 .col001-gallery-card.is-portrait img {
     aspect-ratio: 7 / 10;
-    max-height: clamp(19rem, 59vh, 36rem);
+    max-height: clamp(17rem, 52vh, 32rem);
 }
 
 .col001-gallery-card.is-landscape img {
     aspect-ratio: 10 / 7;
     width: min(100%, 54rem);
-    max-height: clamp(16rem, 52vh, 31rem);
+    max-height: clamp(14.5rem, 45vh, 27rem);
 }
 
 .col001-gallery-card figcaption {
     display: grid;
-    gap: 0.1rem;
-    padding: 0.42rem 0.62rem 0.5rem;
+    gap: 0.08rem;
+    min-height: 3.85rem;
+    padding: 0.26rem 0.62rem 0.34rem;
     background: transparent;
     color: var(--brand-black);
     text-align: center;
+    align-content: center;
 }
 
 .col001-gallery-card figcaption strong {
-    display: none;
+    display: block;
+    color: var(--brand-black);
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.05;
 }
 
-.col001-gallery-card figcaption span,
+.col001-gallery-card figcaption span {
+    color: rgba(26, 26, 26, 0.74);
+    font-size: 0.66rem;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.12;
+}
+
 .col001-gallery-card figcaption em {
     color: rgba(26, 26, 26, 0.68);
-    font-size: 0.7rem;
+    font-size: 0.56rem;
     font-style: normal;
-    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.18;
+    text-transform: uppercase;
 }
 
 .format-system {
@@ -1276,7 +1295,7 @@ button:disabled {
 }
 
 #gallery .col001-gallery-card figcaption {
-    display: none;
+    display: grid;
 }
 
 #products .collection-card,
@@ -2142,17 +2161,17 @@ footer a:hover {
     }
 
     .col001-gallery-card figure {
-        grid-template-rows: minmax(0, 1fr) auto;
+        grid-template-rows: minmax(0, 1fr) minmax(3.7rem, auto);
     }
 
     .col001-gallery-card img {
-        max-height: clamp(20rem, 60vh, 36rem);
+        max-height: clamp(17.5rem, 52vh, 31rem);
         margin: 0 auto;
     }
 
     .col001-gallery-card.is-landscape img {
         width: min(100%, 54rem);
-        max-height: clamp(17rem, 52vh, 31rem);
+        max-height: clamp(15rem, 45vh, 27rem);
     }
 
     .gallery-track .gallery-card {
@@ -2441,17 +2460,17 @@ footer a:hover {
     }
 
     .col001-gallery-card figure {
-        grid-template-rows: minmax(0, 1fr) auto;
+        grid-template-rows: minmax(0, 1fr) minmax(3.8rem, auto);
     }
 
     .col001-gallery-card img {
-        max-height: clamp(18rem, 53vh, 30rem);
+        max-height: clamp(15.5rem, 45vh, 25rem);
         margin: 0 auto;
     }
 
     .col001-gallery-card.is-landscape img {
         width: min(100%, 46rem);
-        max-height: clamp(15rem, 45vh, 25rem);
+        max-height: clamp(13.5rem, 38vh, 21rem);
     }
 
     #gallery,
@@ -3015,21 +3034,34 @@ footer a:hover {
     }
 
     .col001-gallery-card figure {
-        grid-template-rows: minmax(0, 1fr) auto;
+        grid-template-rows: minmax(0, 1fr) minmax(3.95rem, auto);
     }
 
     .col001-gallery-card img {
-        max-height: clamp(15rem, 48vh, 23rem);
+        max-height: clamp(12.8rem, 38vh, 19.2rem);
         margin: 0 auto;
     }
 
     .col001-gallery-card.is-landscape img {
         width: min(100%, 91vw);
-        max-height: clamp(12.5rem, 39vh, 19.5rem);
+        max-height: clamp(10.8rem, 31vh, 15.6rem);
     }
 
     .col001-gallery-card figcaption {
-        padding: 0.38rem 0.58rem 0.46rem;
+        min-height: 3.95rem;
+        padding: 0.3rem 0.42rem 0.38rem;
+    }
+
+    .col001-gallery-card figcaption strong {
+        font-size: 0.92rem;
+    }
+
+    .col001-gallery-card figcaption span {
+        font-size: 0.62rem;
+    }
+
+    .col001-gallery-card figcaption em {
+        font-size: 0.5rem;
     }
 
     .gallery-controls {
