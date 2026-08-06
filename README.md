@@ -30,6 +30,26 @@ CicloBeef Studio currently operates through a curated quotation workflow rather 
 - 60 × 90 cm / 24 × 36 in
 - 70 × 100 cm / 28 × 40 in
 
+## Collection 001 Artwork Registry
+
+Collection 001 uses the following canonical artwork names for commercial,
+editorial, and quotation workflows:
+
+| Internal code | Public title | Editorial descriptor |
+| --- | --- | --- |
+| COL001-AW001 | Aureocrya | Antarctic Dawn |
+| COL001-AW002 | Vesperocrya | Antarctic Afterglow |
+
+Both artworks are available by quote in CicloBeef Signature Frame and
+CicloBeef Signature Acrylic, with vertical and horizontal orientations.
+
+Example request:
+
+```text
+I would like to request a quote for Aureocrya (COL001-AW001),
+CicloBeef Signature Frame, vertical orientation, 60 × 90 cm.
+```
+
 ## Technology Stack
 
 The repository currently uses the following technologies:
