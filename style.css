@@ -2466,7 +2466,8 @@ footer a:hover {
     }
 
     .gallery-controls {
-        display: none;
+        display: flex;
+        margin-top: 0.5rem;
     }
 }
 
