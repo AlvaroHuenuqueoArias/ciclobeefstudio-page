@@ -751,7 +751,12 @@ button:disabled {
 }
 
 .col001-gallery-card figcaption strong {
-    display: none;
+    display: block;
+    color: var(--brand-black);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(0.88rem, 1.1vw, 1rem);
+    font-weight: 600;
+    line-height: 1.1;
 }
 
 .col001-gallery-card figcaption span,
@@ -1276,7 +1281,7 @@ button:disabled {
 }
 
 #gallery .col001-gallery-card figcaption {
-    display: none;
+    display: grid;
 }
 
 #products .collection-card,
@@ -2466,7 +2471,8 @@ footer a:hover {
     }
 
     .gallery-controls {
-        display: none;
+        display: flex;
+        margin-top: 0.5rem;
     }
 }
 
