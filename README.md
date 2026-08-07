@@ -30,6 +30,15 @@ CicloBeef Studio currently operates through a curated quotation workflow rather 
 - 60 × 90 cm / 24 × 36 in
 - 70 × 100 cm / 28 × 40 in
 
+## Collection 001 Gallery Titles
+
+The Gallery presents the eight Collection 001 visual variants while grouping them under two public artwork titles:
+
+- Aureocrya — CicloBeef Signature Frame and CicloBeef Signature Acrylic, vertical and horizontal.
+- Vesperocrya — CicloBeef Signature Frame and CicloBeef Signature Acrylic, vertical and horizontal.
+
+Tablet and iPad Gallery controls are expected to remain visible and usable across the 768px to 1024px viewport range.
+
 ## Technology Stack
 
 The repository currently uses the following technologies:
